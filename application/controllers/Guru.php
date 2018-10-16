@@ -20,6 +20,6 @@ class Guru extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('view_profil_guru');
+		$this->load->view('guru/view_profil_guru');
 	}
 }

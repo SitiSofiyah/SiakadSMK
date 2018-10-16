@@ -20,6 +20,6 @@ class Siswa extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('view_profil_siswa');
+		$this->load->view('siswa/view_profil_siswa');
 	}
 }
