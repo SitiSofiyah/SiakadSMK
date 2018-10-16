@@ -190,7 +190,7 @@
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Tanggal Lahir(tahun-bulan-tanggal)</label>
+                          <label>Tanggal Lahir</label>
                           <input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control">
                         </div>
                       </div>
@@ -217,7 +217,14 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Agama</label>
-                          <input type="text" id="agama" name="agama" class="form-control">
+                           <select name="agama" class="form-control" name="agama">
+                            <option value="Islam" >Islam</option>
+                            <option value="Budha" >Budha</option>
+                            <option value="Hindu" >Hindu</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katholik">Katholik</option>
+                            <option value="Kong Hu Chu">Kong Hu Chu</option>
+                          </select>
                         </div>
                       </div>
                     </div>

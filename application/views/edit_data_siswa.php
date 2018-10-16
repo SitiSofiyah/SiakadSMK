@@ -174,8 +174,8 @@
                     <div class="row">
                       <div class="col-md-8">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Tanggal Lahir</label>
-                          <input type="text" id="tgl_lahir" name="tgl_lahir" class="form-control" value="<?php echo $data_siswa[0]->tgl_lahir ?>">
+                          <label>Tanggal Lahir</label>
+                          <input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control" value="<?php echo $data_siswa[0]->tgl_lahir ?>">
                         </div>
                       </div>
                     </div>
@@ -183,9 +183,11 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Jenis Kelamin</label>
-                          <br>
-                          <input type="radio" value="Perempuan" checked="checked" id="jk" name="jk">Perempuan
-                          <input type="radio" value="Laki-laki" id="jk" name="jk">Laki-laki
+                           <select class="form-control" name="jk">
+                            <option value="<?php echo $data_siswa[0]->jenis_kelamin ?>"><?php echo $data_siswa[0]->jenis_kelamin ?></option>
+                            <option value="Perempuan">Perempuan</option>
+                            <option value="Laki-Laki">Laki-Laki</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -201,7 +203,15 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Agama</label>
-                          <input type="text" id="agama" name="agama" class="form-control" value="<?php echo $data_siswa[0]->agama ?>">
+                           <select name="agama" class="form-control" name="agama">
+                            <option value="<?php echo $data_siswa[0]->agama ?>"><?php echo $data_siswa[0]->agama ?></option>
+                            <option value="Islam" >Islam</option>
+                            <option value="Budha" >Budha</option>
+                            <option value="Hindu" >Hindu</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katholik">Katholik</option>
+                            <option value="Kong Hu Chu">Kong Hu Chu</option>
+                          </select>
                         </div>
                       </div>
                     </div>
