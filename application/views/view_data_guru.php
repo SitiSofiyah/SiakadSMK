@@ -17,6 +17,8 @@
   <link href= "<?php echo base_url ('assets/css/material-dashboard.css?v=2.1.0') ?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?php echo base_url ('assets/demo/demo.css') ?>" rel="stylesheet" />
+ 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body class="">
@@ -95,9 +97,7 @@
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Data Guru</a>
-          </div>
+          
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -135,52 +135,67 @@
         </div>
       </nav>
       <!-- End Navbar -->
+
       <div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
+              <a href="<?php echo base_url('index.php/data_guru/create') ?>">
+                <button type="submit" class="btn btn-primary"> <i class="material-icons">add_circle</i> Tambah Data Guru</button>
+              </a>
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title ">Simple Table</h4>
-                  <p class="card-category"> Here is a subtitle for this table</p>
+                  <h4 class="card-title ">Data Guru</h4>
+                  <p class="card-category"> Ini adalah data guru SMK Paramita Mojokerto</p>
                 </div>
                 <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
+                  <div>
+                    <table id="example" class="table table-stripped table-bordered">
                       <thead class=" text-primary">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th>Salary</th>
+                        <th>NIP</th>
+                        <th>Nama</th>
+                        <th>TTL</th>
+                        <th>Alamat</th>
+                        <th>Agama</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Status</th>
+                        <th>Golongan</th>
+                        <th>Jabatan</th>
+                        <th>Aksi</th>
                       </thead>
                       <tbody>
+                       <?php foreach ($guru as $row) { ?>
                         <tr>
-                          <td>1</td>
-                          <td>Dakota Rice</td>
-                          <td>Niger</td>
-                          <td>Oud-Turnhou</td>
-                          <td class="text-primary">$36,738</td>
+                          <td><?php echo $row['nip'] ?></td>
+                          <td><?php echo $row['nama'] ?></td>
+                          <td><?php echo $row['tempat_lahir'].", ".$row['tgl_lahir'] ?></td>
+                          <td><?php echo $row['agama'] ?></td>
+                          <td><?php echo $row['alamat'] ?></td>
+                          <td><?php echo $row['jenis_kelamin'] ?></td>
+                          <td><?php echo $row['status'] ?></td>
+                          <td><?php echo $row['golongan'] ?></td>
+                          <td><?php echo $row['jabatan'] ?></td>
+                          <td>
+                            <a class="btn btn-success"  href="<?php echo base_url('index.php/data_guru/update/'.$row['nip']) ?>">  <i class="material-icons">create</i> </a>
+                            <a class="btn btn-danger" href="<?php echo base_url('index.php/data_guru/delete/'.$row['nip']) ?>"> <i class="material-icons">delete</i> </a>
+                          </td>
                         </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>Dakota Rice</td>
-                          <td>Niger</td>
-                          <td>Oud-Turnhou</td>
-                          <td class="text-primary">$36,738</td>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>Dakota Rice</td>
-                          <td>Niger</td>
-                          <td>Oud-Turnhou</td>
-                          <td class="text-primary">$36,738</td>
-                        </tr>
+                      <?php } ?>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
             </div>
 
           

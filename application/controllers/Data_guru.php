@@ -20,6 +20,62 @@ class Data_guru extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('view_data_guru');
+		$this->load->model('guru_model');
+		$object["guru"] = $this->guru_model->getGuru_list();
+		$this->load->view('view_data_guru',$object);
 	}
+
+	public function create()
+	{
+		$this->load->model('guru_model');
+		$this->form_validation->set_rules('nip', 'nip', 'trim|required');
+		$this->form_validation->set_rules('nama', 'nama', 'trim|required');
+		$this->form_validation->set_rules('username', 'username', 'trim|required');
+		$this->form_validation->set_rules('password', 'password', 'trim|required');
+		$this->form_validation->set_rules('tempat', 'tempat', 'trim|required');
+		$this->form_validation->set_rules('tanggalLahir', 'tanggalLahir', 'trim|required');
+		$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
+		$this->form_validation->set_rules('status', 'status', 'trim|required');
+		$this->form_validation->set_rules('gol', 'gol', 'trim|required');
+		$this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('add_guru');
+		} else {
+			$this->guru_model->insertGuru();
+			echo "<script> alert('data guru telah ditambahkan!');
+				window.location.href='../data_guru';</script>";
+		    // redirect('data_guru');
+		}
+	}
+
+	public function update($id)
+	{
+		$this->load->model('guru_model');
+		$this->form_validation->set_rules('nama', 'nama', 'trim|required');
+		$this->form_validation->set_rules('tempat', 'tempat', 'trim|required');
+		$this->form_validation->set_rules('tanggalLahir', 'tanggalLahir', 'trim|required');
+		$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
+		$this->form_validation->set_rules('status', 'status', 'trim|required');
+		$this->form_validation->set_rules('gol', 'gol', 'trim|required');
+		$this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
+		$object['guru'] = $this->guru_model->getGuru($id);
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('edit_guru', $object);
+		} else {
+			$this->guru_model->updateById($id);
+			echo "<script> alert('data guru telah di update!');
+				window.location.href='../../data_guru';</script>";
+			// redirect('data_guru');
+		}	
+	}
+
+	public function delete($id)
+	{
+		$this->load->model('guru_model');
+		$this->guru_model->delete($id);
+		
+		 redirect('data_guru');
+	}
+
+	
 }
