@@ -17,13 +17,11 @@
   <link href= "<?php echo base_url ('assets/css/material-dashboard.css?v=2.1.0') ?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?php echo base_url ('assets/demo/demo.css') ?>" rel="stylesheet" />
- 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-background-color="white" data-image="<?php echo base_url ('assets/images/sidebar-1.jpg') ?>">
+    <div class="sidebar" data-color="azure" data-background-color="white" data-image="<?php echo base_url ('assets/images/sidebar-1.jpg') ?>">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -42,7 +40,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/data_guru') ?>">
               <i class="material-icons">assignment_ind</i>
               <p>Data Guru</p>
@@ -60,13 +58,7 @@
               <p>Data Kelas</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_nilai_siswa') ?>">
-              <i class="material-icons">content_paste</i>
-              <p>Data Jenis Nilai</p>
-            </a>
-          </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="<?php echo base_url('index.php/data_jurusan') ?>">
               <i class="material-icons">description</i>
               <p>Data Jurusan</p>
@@ -84,12 +76,7 @@
               <p>Data Pengumuman</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
+          
           <!-- <li class="nav-item active-pro ">
                 <a class="nav-link" href="./upgrade.html">
                     <i class="material-icons">unarchive</i>
@@ -104,7 +91,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Data Guru</a>
+            <a class="navbar-brand" href="#pablo">Data Jurusan</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -119,15 +106,7 @@
                 
                 </a>
               </li>
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a> -->
-                
+              
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
@@ -148,96 +127,36 @@
           <div class="row">
             <div class="col-md-12">
               <div class="card">
-                <div class="card-header card-header-warning">
-                  <h4 class="card-title ">Edit Data Guru</h4>
+                <div class="card-header card-header-info">
+                  <h4 class="card-title">Edit Data Jurusan</h4>
+                  <p class="card-category">Isi dibawah ini</p>
+                  <?php echo form_open_multipart('data_jurusan/update/' .$this->uri->segment(3)); ?>
+
+                 <?php echo validation_errors(); ?>
                 </div>
                 <div class="card-body">
-                
-                <?php echo form_open('data_guru/update/'.$this->uri->segment(3)); ?>
-                <?php echo validation_errors(); ?>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">NIP</label>
-                          <input value="<?php echo $guru[0]->nip ?>" type="text" class="form-control"  disabled>
-                          <input value="<?php echo $guru[0]->nip ?>" type="hidden" class="form-control" name="nip" >
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">Nama</label>
-                          <input value="<?php echo $guru[0]->nama ?>" type="text" class="form-control" name="nama">
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">Tempat Lahir</label>
-                          <input value="<?php echo $guru[0]->tempat_lahir ?>" type="text" class="form-control" name="tempat">
-                  </div>
-                  <div class="form-group">
-                          Tanggal Lahir :
-                          <input value="<?php echo $guru[0]->tgl_lahir ?>" type="date" class="form-control" name="tanggalLahir">
-                  </div>
-                   <div class="form-group">
-                          <label class="bmd-label-floating">Jenis Kelamin</label>
-                           <select class="form-control" name="jenisKel">
-                            <option value="<?php echo $guru[0]->jenis_kelamin ?>"><?php echo $guru[0]->jenis_kelamin ?></option>
-                            <option value="Perempuan">Perempuan</option>
-                            <option value="Laki-Laki">Laki-Laki</option>
-                          </select>
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">Alamat</label>
-                          <input value="<?php echo $guru[0]->alamat ?>" type="text" class="form-control" name="alamat">
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">Agama</label>
-                           <select name="agama" class="form-control" name="agama">
-                            <option value="<?php echo $guru[0]->agama ?>"><?php echo $guru[0]->agama ?></option>
-                            <option value="Islam" >Islam</option>
-                            <option value="Budha" >Budha</option>
-                            <option value="Hindu" >Hindu</option>
-                            <option value="Kristen">Kristen</option>
-                            <option value="Katholik">Katholik</option>
-                            <option value="Kong Hu Chu">Kong Hu Chu</option>
-                          </select>
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">Status</label>
-                          <input value="<?php echo $guru[0]->status ?>" type="text" class="form-control" name="status">
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">Golongan</label>
-                          <input value="<?php echo $guru[0]->golongan ?>" type="text" class="form-control" name="gol">
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">Jabatan</label>
-                          <input value="<?php echo $guru[0]->jabatan ?>" type="text" class="form-control" name="jabatan">
-                  </div>
-                  
-                </div>
-
-                <button type="submit" class="btn btn-primary">Edit</button>
-
+                  <form>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nama Jurusan</label>
+                          <input type="text" id="jurusan" name="jurusan" class="form-control" value="<?php echo $data_jurusan[0]->nama_jurusan ?>">
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-info pull-right">Simpan</button>
+                    <a href="<?php echo base_url('index.php/data_jurusan/') ?>" class="btn btn-danger">Kembali</a>
                 <?php echo form_close(); ?>
-                  
+                    <div class="clearfix"></div>
+                  </form>
                 </div>
               </div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-<script type="text/javascript">
-  $(document).ready( function () {
-      $('#table_id').DataTable();
-  } );
-</script>
-
             </div>
+            
+
 
           
-      <footer class="text-center">
-  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a><br><br>
-  <p>www.smkparamitamojokerto.com</a></p> 
-</footer>
-    </div>
-  </div>
+    
   <!--   Core JS Files   -->
   <script src="<?php echo base_url ('assets/js/core/jquery.min.js') ?>" type="text/javascript"></script>
   <script src="<?php echo base_url ('assets/js/core/popper.min.js') ?>" type="text/javascript"></script>

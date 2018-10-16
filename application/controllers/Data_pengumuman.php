@@ -22,7 +22,7 @@ class Data_pengumuman extends CI_Controller {
 	{
 		$this->load->model('model_datapeng');
 		$data["peng_list"] = $this->model_datapeng->getTampilPeng();
-		$this->load->view('view_data_pengumuman', $data);
+		$this->load->view('admin/view_data_pengumuman', $data);
 	}
 
 	public function create()
@@ -33,7 +33,7 @@ class Data_pengumuman extends CI_Controller {
 		/*$this->form_validation->set_rules('tgL_peng', 'Tanggal Pengumuman', 'trim|required');*/
 		
 		if ($this->form_validation->run() == FALSE)
-			{ $this->load->view('input_data_peng'); 
+			{ $this->load->view('admin/input_data_peng'); 
 	}
 		else
 		{
@@ -53,7 +53,7 @@ class Data_pengumuman extends CI_Controller {
 		$data['data_pengumuman']=$this->model_datapeng->getPeng($id);
 
 		if ($this->form_validation->run() == FALSE){
-			$this->load->view('edit_data_peng', $data);
+			$this->load->view('admin/edit_data_peng', $data);
 		}else{
 			$this->model_datapeng->updateById($id);
 			echo "<script> alert('Data Pengumuman berhasil diedit'); window.location.href='../../Data_pengumuman';</script>";

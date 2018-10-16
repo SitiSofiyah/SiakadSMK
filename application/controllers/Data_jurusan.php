@@ -22,7 +22,7 @@ class Data_jurusan extends CI_Controller {
 	{
 		$this->load->model('model_datajur');
 		$data["jur_list"] = $this->model_datajur->getTampilJur();
-		$this->load->view('view_data_jurusan', $data);
+		$this->load->view('admin/view_data_jurusan', $data);
 	}
 
 	public function create()
@@ -31,7 +31,7 @@ class Data_jurusan extends CI_Controller {
 		$this->form_validation->set_rules('jurusan', 'Jurusan', 'trim|required');
 		
 		if ($this->form_validation->run() == FALSE)
-			{ $this->load->view('input_data_jur'); 
+			{ $this->load->view('admin/input_data_jur'); 
 	}
 		else
 		{
@@ -49,7 +49,7 @@ class Data_jurusan extends CI_Controller {
 		$data['data_jurusan']=$this->model_datajur->getJur($id);
 
 		if ($this->form_validation->run() == FALSE){
-			$this->load->view('edit_data_jur', $data);
+			$this->load->view('admin/edit_data_jur', $data);
 		}else{
 			$this->model_datajur->updateById($id);
 			echo "<script> alert('Data Jurusan berhasil diedit'); window.location.href='../../Data_jurusan';</script>";

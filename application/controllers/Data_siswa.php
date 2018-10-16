@@ -22,7 +22,7 @@ class Data_siswa extends CI_Controller {
 	{
 		$this->load->model('model_datasiswa');
 		$data["siswa_list"] = $this->model_datasiswa->getTampilSiswa();
-		$this->load->view('view_data_siswa', $data);
+		$this->load->view('admin/view_data_siswa', $data);
 	}
 
 	public function create()
@@ -40,7 +40,7 @@ class Data_siswa extends CI_Controller {
 		
 		
 		if ($this->form_validation->run() == FALSE)
-			{ $this->load->view('input_data_siswa'); 
+			{ $this->load->view('admin/input_data_siswa'); 
 	}
 		else
 		{
@@ -65,7 +65,7 @@ class Data_siswa extends CI_Controller {
 		$data['data_siswa']=$this->model_datasiswa->getSiswa($id);
 
 		if ($this->form_validation->run() == FALSE){
-			$this->load->view('edit_data_siswa', $data);
+			$this->load->view('admin/edit_data_siswa', $data);
 		}else{
 			$this->model_datasiswa->updateById($id);
 			echo "<script> alert('Data Siswa berhasil diedit'); window.location.href='../../Data_siswa';</script>";
