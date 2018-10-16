@@ -58,6 +58,12 @@
               <p>Data Kelas</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<?php echo base_url('index.php/data_nilai_siswa') ?>">
+              <i class="material-icons">content_paste</i>
+              <p>Data Jenis Nilai</p>
+            </a>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href="<?php echo base_url('index.php/data_jurusan') ?>">
               <i class="material-icons">description</i>
