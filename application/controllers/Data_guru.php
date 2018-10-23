@@ -22,7 +22,7 @@ class Data_guru extends CI_Controller {
 	{
 		$this->load->model('guru_model');
 		$object["guru"] = $this->guru_model->getGuru_list();
-		$this->load->view('view_data_guru',$object);
+		$this->load->view('admin/view_data_guru',$object);
 	}
 
 	public function create()
@@ -39,7 +39,7 @@ class Data_guru extends CI_Controller {
 		$this->form_validation->set_rules('gol', 'gol', 'trim|required');
 		$this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('add_guru');
+			$this->load->view('admin/add_guru');
 		} else {
 			$this->guru_model->insertGuru();
 			echo "<script> alert('data guru telah ditambahkan!');
@@ -60,7 +60,7 @@ class Data_guru extends CI_Controller {
 		$this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
 		$object['guru'] = $this->guru_model->getGuru($id);
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('edit_guru', $object);
+			$this->load->view('admin/edit_guru', $object);
 		} else {
 			$this->guru_model->updateById($id);
 			echo "<script> alert('data guru telah di update!');

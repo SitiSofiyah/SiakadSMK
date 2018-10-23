@@ -20,6 +20,6 @@ class Data_kelas extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('view_data_kelas');
+		$this->load->view('admin/view_data_kelas');
 	}
 }
