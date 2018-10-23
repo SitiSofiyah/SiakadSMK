@@ -8,57 +8,38 @@ class Pengajar_model extends CI_Model {
 		parent::__construct();
 		
 	}
-	
-	public function getGuru_list()
+	public function getTampilPengajar()
 	{
-		$query = $this->db->query("select * from guru order by nama asc");
+		$query = $this->db->query("SELECT * FROM mapel inner join detail_pengajar on mapel.id_mapel = detail_pengajar.fk_mapel inner join kelas on detail_pengajar.fk_kelas = kelas.id_kelas inner join guru on detail_pengajar.nip = guru.nip");
 		return $query->result_array();
 	}
-	public function getGuru($id)
+
+	public function insertPengajar()
 	{
-		$query = $this->db->query("select * from guru where nip=$id");
-		return $query->result();
-	}
-	public function insertGuru()
-	{
-		$password = md5($this->input->post('password'));
+	
 			$object=array(
 			'nip'=>$this->input->post('nip'),
-			'username'=>$this->input->post('username'),
-			'password'=>$password,
-			'nama'=>$this->input->post('nama'),
-			'tempat_lahir'=>$this->input->post('tempat'),
-			'tgl_lahir'=>$this->input->post('tanggalLahir'),
-			'alamat'=>$this->input->post('alamat'),
-			'agama'=>$this->input->post('agama'),
-			'jenis_kelamin'=>$this->input->post('jenisKel'),
-			'status'=>$this->input->post('status'),
-			'golongan'=>$this->input->post('gol'),
-			'jabatan'=>$this->input->post('jabatan'));
+			'fk_mapel'=>$this->input->post('mapel'),
+			'fk_kelas'=>$this->input->post('kelas'),
+			'thn_ajaran'=>$this->input->post('thn'));
+		$this->db->insert('detail_pengajar', $object);
+	}
 
-		$this->db->insert('guru', $object);
-	}
-	
-	public function updateById($id)
-	{
-		$data=array(
-			'nip'=>$this->input->post('nip'),
-			'nama'=>$this->input->post('nama'),
-			'tempat_lahir'=>$this->input->post('tempat'),
-			'tgl_lahir'=>$this->input->post('tanggalLahir'),
-			'alamat'=>$this->input->post('alamat'),
-			'agama'=>$this->input->post('agama'),
-			'jenis_kelamin'=>$this->input->post('jenisKel'),
-			'status'=>$this->input->post('status'),
-			'golongan'=>$this->input->post('gol'),
-			'jabatan'=>$this->input->post('jabatan'));
-		$this->db->where('nip', $id);
-		$this->db->update('guru', $data);
-	}
-	
 	public function delete($id){
-		$this->db->where('nip', $id);
-		$this->db->delete('guru');
+		$this->db->where('id_pengajar', $id);
+		$this->db->delete('detail_pengajar');
 	}
 
+	public function updateById($id){
+		$object = array (
+			'nip'=>$this->input->post('nip'),
+			'fk_mapel'=>$this->input->post('mapel'),
+			'fk_kelas'=>$this->input->post('kelas'),
+			'thn_ajaran'=>$this->input->post('thn'));
+
+		$this->db->where('id_pengajar', $id);
+		$this->db->update('detail_pengajar', $object);
+		
+	}
+	
 }

@@ -21,8 +21,61 @@ class Detail_guru extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('pengajar_model');
-		$object["pengajar"] = $this->pengajar_model->getPengajar_list();
-		$this->load->view('admin/view_data_guru',$object);
+		$object["pengajar"] = $this->pengajar_model->getTampilPengajar();
+		$this->load->view('admin/view_detail_guru',$object);
+	}
+
+	public function create()
+	{
+		$this->load->model('pengajar_model');
+		$this->load->model('model_dataMapel');
+		$this->load->model('model_kelas');
+		$this->load->model('guru_model');
+		$this->form_validation->set_rules('nip', 'nip', 'trim|required');
+		$this->form_validation->set_rules('mapel', 'mapel', 'trim|required');
+		$this->form_validation->set_rules('kelas', 'kelas', 'trim|required');
+		$this->form_validation->set_rules('thn', 'tahun ajaran', 'trim|required');
+		$object["guru"] = $this->guru_model->getGuru_list();
+		$object["mapel"] = $this->model_dataMapel->getTampilMapel();
+		$object["kelas"] = $this->model_kelas->getTampilKelas();
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('admin/add_pengajar',$object);
+		} else {
+			$this->pengajar_model->insertPengajar();
+			echo "<script> alert('data pengajar telah ditambahkan!');
+				window.location.href='../detail_guru';</script>";
+		    // redirect('data_guru');
+		}
+	}
+
+	public function delete($id)
+	{
+		$this->load->model('pengajar_model');
+		$this->pengajar_model->delete($id);
+		redirect('detail_guru');
+	}
+
+	public function update($id)
+	{
+		$this->load->model('pengajar_model');
+		$this->load->model('model_dataMapel');
+		$this->load->model('model_kelas');
+		$this->load->model('guru_model');
+		$this->form_validation->set_rules('nip', 'nip', 'trim|required');
+		$this->form_validation->set_rules('mapel', 'mapel', 'trim|required');
+		$this->form_validation->set_rules('kelas', 'kelas', 'trim|required');
+		$this->form_validation->set_rules('thn', 'tahun ajaran', 'trim|required');
+		$object["guru"] = $this->guru_model->getGuru_list();
+		$object["mapel"] = $this->model_dataMapel->getTampilMapel();
+		$object["kelas"] = $this->model_kelas->getTampilKelas();
+
+		if ($this->form_validation->run() == FALSE){
+			$this->load->view('admin/edit_data_siswa', $data);
+		}else{
+			$this->model_datasiswa->updateById($id);
+			echo "<script> alert('Data Siswa berhasil diedit'); window.location.href='../../Data_siswa';</script>";
+
+		}
 	}
 
 }

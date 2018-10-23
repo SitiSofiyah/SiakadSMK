@@ -135,47 +135,36 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <a href="<?php echo base_url('index.php/data_guru/create') ?>">
-                <button type="submit" class="btn btn-primary"> <i class="material-icons">add_circle</i> Tambah Data Guru</button>
+              <a href="<?php echo base_url('index.php/detail_guru/create') ?>">
+                <button type="submit" class="btn btn-primary"> <i class="material-icons">add_circle</i> Tambah Data Pengajar</button>
               </a> 
-              <a href="<?php echo base_url('index.php/detail_guru') ?>">
-                <button type="submit" class="btn btn-success">  Data Pengajar</button>
-              </a>
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title ">Data Guru</h4>
-                  <p class="card-category"> Ini adalah data guru SMK Paramita Mojokerto</p>
+                  <h4 class="card-title ">Data Pengajar</h4>
+                  <p class="card-category"> Ini adalah data pengajar SMK Paramita Mojokerto</p>
                 </div>
                 <div class="card-body">
                   <div>
                     <table id="example" class="table table-stripped table-bordered">
                       <thead class=" text-primary">
                         <th>NIP</th>
-                        <th>Nama</th>
-                        <th>TTL</th>
-                        <th>Alamat</th>
-                        <th>Agama</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Status</th>
-                        <th>Golongan</th>
-                        <th>Jabatan</th>
+                        <th>Nama Pengajar</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Kelas</th>
+                        <th>Tahun Ajaran</th>
                         <th>Aksi</th>
                       </thead>
                       <tbody>
-                       <?php foreach ($guru as $row) { ?>
+                       <?php foreach ($pengajar as $row) { ?>
                         <tr>
                           <td><?php echo $row['nip'] ?></td>
                           <td><?php echo $row['nama'] ?></td>
-                          <td><?php echo $row['tempat_lahir'].", ".$row['tgl_lahir'] ?></td>
-                          <td><?php echo $row['agama'] ?></td>
-                          <td><?php echo $row['alamat'] ?></td>
-                          <td><?php echo $row['jenis_kelamin'] ?></td>
-                          <td><?php echo $row['status'] ?></td>
-                          <td><?php echo $row['golongan'] ?></td>
-                          <td><?php echo $row['jabatan'] ?></td>
+                          <td><?php echo $row['nama_mapel'] ?></td>
+                          <td><?php echo $row['nama_kelas'] ?></td>
+                          <td><?php echo $row['thn_ajaran'] ?></td>
                           <td>
-                            <a class="btn btn-success"  href="<?php echo base_url('index.php/data_guru/update/'.$row['nip']) ?>">  <i class="material-icons">create</i> </a>
-                            <a class="btn btn-danger" href="<?php echo base_url('index.php/data_guru/delete/'.$row['nip']) ?>"> <i class="material-icons">delete</i> </a>
+                            <a class="btn btn-success"  href="<?php echo base_url('index.php/data_guru/update/'.$row['id_pengajar']) ?>">  <i class="material-icons">create</i> </a>
+                            <a class="btn btn-danger" href="<?php echo base_url('index.php/detail_guru/delete/'.$row['id_pengajar']) ?>"> <i class="material-icons">delete</i> </a>
                           </td>
                         </tr>
                       <?php } ?>

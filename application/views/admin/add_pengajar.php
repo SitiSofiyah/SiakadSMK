@@ -78,7 +78,7 @@
               <p>Data Pengumuman</p>
             </a>
           </li>
-         
+          
           <!-- <li class="nav-item active-pro ">
                 <a class="nav-link" href="./upgrade.html">
                     <i class="material-icons">unarchive</i>
@@ -92,7 +92,9 @@
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
-          
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="#pablo">Data Guru</a>
+          </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -130,68 +132,62 @@
         </div>
       </nav>
       <!-- End Navbar -->
-
       <div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <a href="<?php echo base_url('index.php/data_guru/create') ?>">
-                <button type="submit" class="btn btn-primary"> <i class="material-icons">add_circle</i> Tambah Data Guru</button>
-              </a> 
-              <a href="<?php echo base_url('index.php/detail_guru') ?>">
-                <button type="submit" class="btn btn-success">  Data Pengajar</button>
-              </a>
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title ">Data Guru</h4>
-                  <p class="card-category"> Ini adalah data guru SMK Paramita Mojokerto</p>
+                  <h4 class="card-title ">Tambah Data Pengajar</h4>
                 </div>
                 <div class="card-body">
-                  <div>
-                    <table id="example" class="table table-stripped table-bordered">
-                      <thead class=" text-primary">
-                        <th>NIP</th>
-                        <th>Nama</th>
-                        <th>TTL</th>
-                        <th>Alamat</th>
-                        <th>Agama</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Status</th>
-                        <th>Golongan</th>
-                        <th>Jabatan</th>
-                        <th>Aksi</th>
-                      </thead>
-                      <tbody>
-                       <?php foreach ($guru as $row) { ?>
-                        <tr>
-                          <td><?php echo $row['nip'] ?></td>
-                          <td><?php echo $row['nama'] ?></td>
-                          <td><?php echo $row['tempat_lahir'].", ".$row['tgl_lahir'] ?></td>
-                          <td><?php echo $row['agama'] ?></td>
-                          <td><?php echo $row['alamat'] ?></td>
-                          <td><?php echo $row['jenis_kelamin'] ?></td>
-                          <td><?php echo $row['status'] ?></td>
-                          <td><?php echo $row['golongan'] ?></td>
-                          <td><?php echo $row['jabatan'] ?></td>
-                          <td>
-                            <a class="btn btn-success"  href="<?php echo base_url('index.php/data_guru/update/'.$row['nip']) ?>">  <i class="material-icons">create</i> </a>
-                            <a class="btn btn-danger" href="<?php echo base_url('index.php/data_guru/delete/'.$row['nip']) ?>"> <i class="material-icons">delete</i> </a>
-                          </td>
-                        </tr>
-                      <?php } ?>
-                      </tbody>
-                    </table>
+                
+                <?php echo form_open_multipart('detail_guru/create'); ?>
+                <?php echo validation_errors(); ?>
+                  <div class="form-group">
+                          <label class="bmd-label-floating">Guru</label>
+                          <select  class="form-control" name="nip">
+                          <?php foreach ($guru as $row) : ?>
+                            <option value="<?php echo $row['nip'] ?>"><?php echo $row['nip'].", ".$row['nama'] ?></option>
+                          <?php endforeach?>
+                          </select>
                   </div>
+                  <div class="form-group">
+                          <label class="bmd-label-floating">Mata Pelajaran</label>
+                          <select class="form-control" name="mapel">
+                          <?php foreach ($mapel as $riw) : ?>
+                            <option value="<?php echo $riw['id_mapel'] ?>"><?php echo $riw['nama_mapel']?></option>
+                          <?php endforeach?>
+                          </select>
+                  </div>
+                  <div class="form-group">
+                          <label class="bmd-label-floating">Kelas</label>
+                          <select  class="form-control" name="kelas">
+                          <?php foreach ($kelas as $rew) : ?>
+                            <option value="<?php echo $rew['id_kelas'] ?>"><?php echo $rew['nama_kelas'] ?></option>
+                          <?php endforeach?>
+                          </select>
+                  </div>
+                  <div class="form-group">
+                          <label class="bmd-label-floating">Tahun Ajaran</label>
+                          <input type="text" class="form-control" name="thn">
+                  </div>
+                  
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <?php echo form_close(); ?>
+                  
                 </div>
               </div>
- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() {
-    $('#example').DataTable();
-} );
+  $(document).ready( function () {
+      $('#table_id').DataTable();
+  } );
 </script>
 
             </div>
