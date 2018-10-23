@@ -31,13 +31,16 @@ class Data_pengumuman extends CI_Controller {
 		$this->form_validation->set_rules('judul', 'Judul', 'trim|required');
 		$this->form_validation->set_rules('isi', 'Isi', 'trim|required');
 		/*$this->form_validation->set_rules('tgL_peng', 'Tanggal Pengumuman', 'trim|required');*/
-		
+		$id=$this->model_datapeng->getID();
+		if($id==null){
+			$id=0;
+		}
 		if ($this->form_validation->run() == FALSE)
 			{ $this->load->view('input_data_peng'); 
 	}
 		else
 		{
-			$this->model_datapeng->insertPeng();
+			$this->model_datapeng->insertPeng($id);
 			echo "<script> alert('Data Pengumuman berhasil ditambahkan'); window.location.href='../Data_pengumuman';</script>";
 		}
 

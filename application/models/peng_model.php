@@ -11,7 +11,7 @@ class peng_model extends CI_Model{
 
 	public function getTampilPenguV($id)
 	{
-		$query = $this->db->query("Select * from pengumuman");
+		$query = $this->db->query("Select * from pengumuman where id_pengumuman = $id");
 		return $query->result_array();
 	}
 

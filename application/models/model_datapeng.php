@@ -13,8 +13,16 @@ class model_datapeng extends CI_Model{
 		return $query->result_array();
 	}
 
-	public function insertPeng(){
+	public function getID(){
+		$this->db->select("MAX(id_pengumuman)+1 as id");
+		$this->db->from("pengumuman");
+		$query=$this->db->get();
+		return $query->row()->id;
+	}
+
+	public function insertPeng($id){
 		$data = array (
+			'id_pengumuman'=>$id,
 			'judul'=>$this->input->post('judul'),
 			'isi'=>$this->input->post('isi'), 
 			'tgl_pengumuman'=>$this->input->post('tgl_peng')
