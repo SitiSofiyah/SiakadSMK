@@ -148,6 +148,7 @@
                   <div class="form-group">
                           <label class="bmd-label-floating">Guru</label>
                           <select  class="form-control" name="nip">
+                            <option value="<?php echo $pengajar[0]->nip ?>"><?php echo $pengajar[0]->nip.", ".$pengajar[0]->nama ?></option>
                           <?php foreach ($guru as $row) : ?>
                             <option value="<?php echo $row['nip'] ?>"><?php echo $row['nip'].", ".$row['nama'] ?></option>
                           <?php endforeach?>
@@ -156,6 +157,7 @@
                   <div class="form-group">
                           <label class="bmd-label-floating">Mata Pelajaran</label>
                           <select class="form-control" name="mapel">
+                            <option value="<?php echo $pengajar[0]->id_mapel ?>"><?php echo $pengajar[0]->nama_mapel ?></option>
                           <?php foreach ($mapel as $riw) : ?>
                             <option value="<?php echo $riw['id_mapel'] ?>"><?php echo $riw['nama_mapel']?></option>
                           <?php endforeach?>
@@ -164,6 +166,7 @@
                   <div class="form-group">
                           <label class="bmd-label-floating">Kelas</label>
                           <select  class="form-control" name="kelas">
+                            <option value="<?php echo $pengajar[0]->id_kelas ?>"><?php echo $pengajar[0]->nama_kelas ?></option>
                           <?php foreach ($kelas as $rew) : ?>
                             <option value="<?php echo $rew['id_kelas'] ?>"><?php echo $rew['nama_kelas'] ?></option>
                           <?php endforeach?>
@@ -171,7 +174,7 @@
                   </div>
                   <div class="form-group">
                           <label class="bmd-label-floating">Tahun Ajaran</label>
-                          <input type="text" class="form-control" name="thn">
+                          <input type="text" value="<?php echo $pengajar[0]->thn_ajaran  ?>" class="form-control" name="thn">
                   </div>
                   
 

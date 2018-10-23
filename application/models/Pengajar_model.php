@@ -14,6 +14,12 @@ class Pengajar_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function getPengajar($id)
+	{
+		$query = $this->db->query("SELECT * FROM mapel inner join detail_pengajar on mapel.id_mapel = detail_pengajar.fk_mapel inner join kelas on detail_pengajar.fk_kelas = kelas.id_kelas inner join guru on detail_pengajar.nip = guru.nip where id_pengajar=$id");
+		return $query->result();
+	}
+
 	public function insertPengajar()
 	{
 	

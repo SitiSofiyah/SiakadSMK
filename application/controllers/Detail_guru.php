@@ -68,12 +68,12 @@ class Detail_guru extends CI_Controller {
 		$object["guru"] = $this->guru_model->getGuru_list();
 		$object["mapel"] = $this->model_dataMapel->getTampilMapel();
 		$object["kelas"] = $this->model_kelas->getTampilKelas();
-
+		$object["pengajar"] = $this->pengajar_model->getPengajar($id);
 		if ($this->form_validation->run() == FALSE){
-			$this->load->view('admin/edit_data_siswa', $data);
+			$this->load->view('admin/edit_pengajar', $object);
 		}else{
-			$this->model_datasiswa->updateById($id);
-			echo "<script> alert('Data Siswa berhasil diedit'); window.location.href='../../Data_siswa';</script>";
+			$this->pengajar_model->updateById($id);
+			echo "<script> alert('Data Pengajar berhasil diedit'); window.location.href='../../Detail_guru';</script>";
 
 		}
 	}

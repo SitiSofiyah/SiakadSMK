@@ -163,7 +163,7 @@
                           <td><?php echo $row['nama_kelas'] ?></td>
                           <td><?php echo $row['thn_ajaran'] ?></td>
                           <td>
-                            <a class="btn btn-success"  href="<?php echo base_url('index.php/data_guru/update/'.$row['id_pengajar']) ?>">  <i class="material-icons">create</i> </a>
+                            <a class="btn btn-success"  href="<?php echo base_url('index.php/detail_guru/update/'.$row['id_pengajar']) ?>">  <i class="material-icons">create</i> </a>
                             <a class="btn btn-danger" href="<?php echo base_url('index.php/detail_guru/delete/'.$row['id_pengajar']) ?>"> <i class="material-icons">delete</i> </a>
                           </td>
                         </tr>
