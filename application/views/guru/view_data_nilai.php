@@ -144,9 +144,9 @@
                           <td><?php echo $row['thn_ajaran'] ?></td>
                            <td><?php echo $row['rata'] ?></td>
                           <td>
-                            <a class="btn btn-success"  href="<?php echo base_url('index.php/data_nilai_siswa/update/'.$row['id_nilai']) ?>">  <i class="material-icons">create</i> </a>
+                            <a class="btn btn-success"  href="<?php echo base_url('index.php/data_nilai_siswa/update/'.$row['id_nilai'].'/'.$row['id_jenisNilai']) ?>">  <i class="material-icons">create</i> </a>
                             <a class="btn btn-danger" href="<?php echo base_url('index.php/data_nilai_siswa/delete/'.$row['id_nilai']) ?>"> <i class="material-icons">delete</i> </a>
-                            <a class="btn btn-warning" href="<?php echo base_url('index.php/data_nilai_siswa/delete/'.$row['id_nilai']) ?>"> Detail Nilai </a>
+                            <a class="btn btn-warning" href="<?php echo base_url('index.php/data_nilai_siswa/detail/'.$row['id_nilai']) ?>"> Detail Nilai </a>
                           </td>
                         </tr>
                       <?php } ?>
