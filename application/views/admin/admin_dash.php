@@ -140,7 +140,7 @@
                     <i class="material-icons">assignment_ind</i>
                   </div>
                   <p class="card-category">Guru</p>
-                  <h3 class="card-title">50
+                  <h3 class="card-title"><?php foreach ($jml_guru as $guru) {  echo $guru; } ?>
                   </h3>
                 </div>
                 <div class="card-footer">
@@ -157,7 +157,7 @@
                     <i class="material-icons">account_box</i>
                   </div>
                   <p class="card-category">Siswa</p>
-                  <h3 class="card-title">200</h3>
+                  <h3 class="card-title"><?php foreach ($jml_siswa as $siswa) {  echo $siswa; } ?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -173,7 +173,7 @@
                     <i class="material-icons">class</i>
                   </div>
                   <p class="card-category">Kelas</p>
-                  <h3 class="card-title">20</h3>
+                  <h3 class="card-title"><?php foreach ($jml_kelas as $kelas) {  echo $kelas; } ?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -205,7 +205,7 @@
                     <i class="material-icons">assignment</i>
                   </div>
                   <p class="card-category">Mapel</p>
-                  <h3 class="card-title">15</h3>
+                  <h3 class="card-title"><?php foreach ($jml_mapel as $mapel) {  echo $mapel; } ?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">

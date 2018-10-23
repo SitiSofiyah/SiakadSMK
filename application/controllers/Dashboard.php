@@ -23,6 +23,10 @@ class Dashboard extends CI_Controller {
 		$this->load->model('dash_model');
 		$data['jml_jur']=$this->dash_model->getListJur();
 		$data['jml_peng']=$this->dash_model->getListPeng();
+		$data['jml_guru']=$this->dash_model->getListGuru();
+		$data['jml_kelas']=$this->dash_model->getListKelas();
+		$data['jml_siswa']=$this->dash_model->getListSiswa();
+		$data['jml_mapel']=$this->dash_model->getListMapel();
 		$this->load->view('admin/admin_dash', $data);
 
 	}
