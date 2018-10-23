@@ -177,13 +177,13 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Tanggal Lahir(tahun-bulan-tanggal)</label>
-                          <input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control">
-                        </div>
-                      </div>
-                    </div>
+                    <div class="col-md-3">
+                    <div class="form-group">
+                          <label>Tanggal Lahir</label>
+                          <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir">
+                  </div>
+                </div>
+              </div>
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
@@ -195,7 +195,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-3">
+                      <div class="col-md-5">
                         <div class="form-group">
                           <label class="bmd-label-floating">Alamat</label>
                           <input type="text" id="alamat" name="alamat" class="form-control">
@@ -206,8 +206,15 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Agama</label>
-                          <input type="text" id="agama" name="agama" class="form-control">
-                        </div>
+                           <select name="agama" class="form-control" name="agama">
+                            <option value="Islam" >Islam</option>
+                            <option value="Budha" >Budha</option>
+                            <option value="Hindu" >Hindu</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katholik">Katholik</option>
+                            <option value="Kong Hu Chu">Kong Hu Chu</option>
+                          </select>
+                  </div>
                       </div>
                     </div>
                     <button type="submit" class="btn btn-info pull-right">Simpan</button>

@@ -135,6 +135,7 @@
           <div class="row">
             <div class="col-md-12">
               <a href="<?php echo base_url('index.php/data_siswa/create') ?>" ><button type="button" class="btn btn-info"><i class="material-icons">add</i> Tambah Data Siswa</button></a>
+               <a href="<?php echo base_url('index.php/data_siswa/createpdf') ?>" ><button type="button" class="btn btn-default"> Print Data</button></a>
               <div class="card">
                 <div class="card-header card-header-success">
                   <h4 class="card-title ">Data Siswa</h4>

@@ -33,7 +33,7 @@ class Data_siswa extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
 		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'trim|required');
-		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'trim|required');
+		//$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'trim|required');
 		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'trim|required');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
 		$this->form_validation->set_rules('agama', 'Agama', 'trim|required');
@@ -78,5 +78,14 @@ class Data_siswa extends CI_Controller {
 		$this->load->model('model_datasiswa');
 		$this->model_datasiswa->delete($id);
 		redirect('data_siswa');
+	}
+
+	public function createPdf()
+	{
+		$this->load->library('pdf');
+		$this->load->model('model_datasiswa');
+		$data["siswa_list"] = $this->model_datasiswa->getTampilSiswa();
+		$this->pdf->load_view('admin/report_dtasiswa', $data);
+		
 	}
 }
