@@ -13,6 +13,13 @@ class model_datasiswa extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function getDataSiswa($nip)
+	{
+		$query = $this->db->query("SELECT * from siswa s inner join anggota_kelas a ON
+			s.nis = a.nis inner join transaksi_kelas t ON a.fk_transKelas=t.id_transKelas inner join detail_pengajar d ON  where t.fk_guru = $nip ");
+		return $query->result_array();
+	}
+
 	public function insertSiswa(){
 		$data = array (
 			'nis'=>$this->input->post('nis'),
