@@ -18,6 +18,21 @@ class Data_siswa extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+	{
+		parent::__construct();
+		$user = $this->session->userdata('admin');
+
+		   if (!isset($user)) { 
+		   		echo "<script> alert('Anda harus login dahulu!');
+				window.location.href='Auth_admin';</script>"; 
+		   } 
+		   else { 
+		      return true;
+		   }
+	}
+
 	public function index()
 	{
 		$this->load->model('model_datasiswa');

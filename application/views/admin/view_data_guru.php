@@ -122,7 +122,7 @@
                   <p class="d-lg-none d-md-block">
                     Account
                   </p>
-                  <li><a href="http://localhost:8080/NaylinProject/index.php/login/logout">Logout</a></li>
+                  <li><a href="<?php echo base_url('index.php/Auth_admin/logout') ?>">Logout</a></li>
                 </a>
               </li>
             </ul>

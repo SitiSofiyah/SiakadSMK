@@ -20,18 +20,19 @@ class Auth_admin extends CI_Controller {
             $loginadmin = $this->Login_admin->chekLogin($username, $password);
             if (!empty($loginadmin)) {
     
-                $this->session->set_userdata($loginadmin);
+                $this->session->set_userdata('admin',$loginadmin);
                 redirect('dashboard');
             } else {
                 
                 redirect('auth_admin');
             }
-    }
+    }}
 
     function logout() {
         $this->session->sess_destroy();
         redirect('auth_admin');
+        
     }
 
-}
+
 }

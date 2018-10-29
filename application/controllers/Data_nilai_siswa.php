@@ -1,7 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class Data_nilai_siswa extends CI_Controller {
+
+
+	public function __construct()
+	{
+		parent::__construct();
+		$user = $this->session->userdata('guru');
+
+		   if (!isset($user)) { 
+		   		echo "<script> alert('Anda harus login dahulu!');
+				window.location.href='Auth';</script>"; 
+		   } 
+		   else { 
+		      return true;
+		   }
+	}
 
 	public function index()
 	{
