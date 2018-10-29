@@ -171,7 +171,7 @@
         <li><a href="<?php echo base_url('index.php/web') ?>">HOME</a></li>
         <li><a href="#profil">PROFIL</a></li>
         <li><a href="#pengumuman">PENGUMUMAN</a></li>
-        <li><a href="#login">LOGIN</a></li>
+        <li><a href="<?php echo base_url('index.php/Auth') ?>">LOGIN</a></li>
         
       </ul>
     </div>
