@@ -39,7 +39,9 @@ class Data_nilai_siswa extends CI_Controller {
 		$this->form_validation->set_rules('uts', 'uts', 'trim|required');
 		$this->form_validation->set_rules('uas', 'uas', 'trim|required');
 		$this->load->model('model_dataMapel');
-		$object["mapel"] = $this->model_dataMapel->getTampilMapel();
+		$session_data=$this->session->userdata("guru");
+		$data=$session_data['nip'];
+		$object["mapel"] = $this->model_dataMapel->getMapelByGuru($data);
 		$id = $this->nilai_model->getID();
 		$idn = $this->nilai_model->getIDNilai();
 		if($id==null){

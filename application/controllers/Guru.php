@@ -23,7 +23,6 @@ class Guru extends CI_Controller {
 	{
 		parent::__construct();
 		$user = $this->session->userdata('guru');
-
 		   if (!isset($user)) { 
 		   		echo "<script> alert('Anda harus login dahulu!');
 				window.location.href='Auth';</script>"; 
@@ -35,6 +34,8 @@ class Guru extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('guru/view_profil_guru');
+		$session_data=$this->session->userdata("guru");
+		$data['nip']=$session_data['nip'];
+		$this->load->view('guru/view_profil_guru',$data);
 	}
 }

@@ -24,7 +24,7 @@ class Nilai_model extends CI_Model {
 		$query=$this->db->get();
 		return $query->row()->id;
 	}
-	public mfunction getIDNilai(){
+	public function getIDNilai(){
 		$this->db->select("MAX(id_nilai)+1 AS id");
 		$this->db->from("nilai");
 		$query=$this->db->get();
