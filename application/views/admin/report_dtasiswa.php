@@ -34,15 +34,18 @@
                           <th class= "text-center">No</th>
                           <th class= "text-center">NIS</th>
                           <th class= "text-center">Nama</th>
+                          <th class= "text-center">Kelas</th>
+                          <th class= "text-center">Jurusan</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <?php $id=1; foreach ($siswa_list as $key) : ?>
+                        <?php $id=1; foreach ($siswa1_list as $key) : ?>
                         <tr>
                           <td class= "text-center"><?php echo $id ?></td>
                           <td class= "text-center"><?php echo $key['nis'] ?></td>
                           <td class= "text-center"><?php echo $key['nama'] ?></td>
-
+                          <td class= "text-center"><?php echo $key['nama_kelas'] ?></td>
+                          <td class= "text-center"><?php echo $key['nama_jurusan'] ?></td>
                         </tr>
                         <?php $id++; endforeach?>
                       </tbody>

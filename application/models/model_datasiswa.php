@@ -13,6 +13,12 @@ class model_datasiswa extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function getTampilSiswa1()
+	{
+		$query = $this->db->query("SELECT * FROM siswa s INNER JOIN anggota_kelas a ON s.nis = a.nis INNER JOIN transaksi_kelas t ON a.fk_transKelas=t.id_transKelas INNER JOIN kelas k on t.fk_kelas INNER JOIN jurusan j ON k.fk_jurusan = j.id_jurusan");
+		return $query->result_array();
+	}
+
 	public function getDataSiswa($nip)
 	{
 		$query = $this->db->query("SELECT * from siswa s inner join anggota_kelas a ON
