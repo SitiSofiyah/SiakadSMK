@@ -22,7 +22,7 @@ class model_datasiswa extends CI_Model{
 	public function getDataSiswa($nip)
 	{
 		$query = $this->db->query("SELECT * from siswa s inner join anggota_kelas a ON
-			s.nis = a.nis inner join transaksi_kelas t ON a.fk_transKelas=t.id_transKelas inner join detail_pengajar d ON  where t.fk_guru = $nip ");
+			s.nis = a.nis inner join transaksi_kelas t ON a.fk_transKelas=t.id_transKelas inner join kelas k on t.fk_kelas=k.id_kelas inner join detail_pengajar d on k.id_kelas = d.fk_kelas inner join mapel on d.fk_mapel = mapel.id_mapel  where t.fk_guru = $nip");
 		return $query->result_array();
 	}
 

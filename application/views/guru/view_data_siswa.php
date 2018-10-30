@@ -47,7 +47,7 @@
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_siswa') ?>">
+            <a class="nav-link" href="<?php echo base_url('index.php/guru/siswa') ?>">
               <i class="material-icons">account_box</i>
               <p>Data Siswa</p>
             </a>
@@ -129,21 +129,16 @@
                         <th>Nama</th>
                         <th>Kelas</th>
                         <th>Mapel</th>
-                        <th>Action</th>
-                      </thead>
+                       </thead>
                       <tbody>
                         <?php foreach ($siswa as $row) { ?>
                         <tr>
                           <td><?php echo $row['nis'] ?></td>
+                          <td><?php echo $row['nama'] ?></td>
+                          <td><?php echo $row['nama_kelas'] ?></td>
                           <td><?php echo $row['nama_mapel'] ?></td>
-                          <td><?php echo $row['semester'] ?></td>
-                          <td><?php echo $row['thn_ajaran'] ?></td>
-                           <td><?php echo $row['rata'] ?></td>
-                          <td>
-                           <!--  <a class="btn btn-success"  href="<?php echo base_url('index.php/data_nilai_siswa/update/'.$row['id_nilai'].'/'.$row['id_jenisNilai']) ?>">  <i class="material-icons">create</i> </a>
-                            <a class="btn btn-danger" href="<?php echo base_url('index.php/data_nilai_siswa/delete/'.$row['id_nilai']) ?>"> <i class="material-icons">delete</i> </a>
-                            <a class="btn btn-warning" href="<?php echo base_url('index.php/data_nilai_siswa/detail/'.$row['id_nilai']) ?>"> Detail Nilai </a> -->
-                          </td>
+                          
+                        
                         </tr>
                       <?php } ?>
                       </tbody>

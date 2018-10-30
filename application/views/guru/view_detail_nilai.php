@@ -47,7 +47,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_siswa') ?>">
+            <a class="nav-link" href="<?php echo base_url('index.php/guru/siswa') ?>">
               <i class="material-icons">account_box</i>
               <p>Data Siswa</p>
             </a>
