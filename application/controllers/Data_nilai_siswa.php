@@ -31,7 +31,6 @@ class Data_nilai_siswa extends CI_Controller {
 		$this->load->model('nilai_model');
 		$this->form_validation->set_rules('nis', 'Nis', 'trim|required');
 		$this->form_validation->set_rules('mapel', 'mapel', 'trim|required');
-		$this->form_validation->set_rules('semester', 'semester', 'trim|required');
 		$this->form_validation->set_rules('uh1', 'uh1', 'trim|required');
 		$this->form_validation->set_rules('uh2', 'uh2', 'trim|required');
 		$this->form_validation->set_rules('uh3', 'uh3', 'trim|required');

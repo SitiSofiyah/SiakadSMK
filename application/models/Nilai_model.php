@@ -48,7 +48,6 @@ class Nilai_model extends CI_Model {
 			'id_nilai'=>$idn,
 			'fk_nis'=>$this->input->post('nis'),
 			'fk_mapel'=>$this->input->post('mapel'),
-			'semester'=> $this->input->post('semester'), 
 			'fk_jenisNilai'=>$id, 
 			'thn_ajaran'=>$this->input->post('thn_ajaran')
 		);

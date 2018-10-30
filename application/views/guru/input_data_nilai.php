@@ -47,7 +47,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_siswa') ?>">
+            <a class="nav-link" href="<?php echo base_url('index.php/guru/siswa') ?>">
               <i class="material-icons">account_box</i>
               <p>Data Siswa</p>
             </a>
@@ -134,10 +134,6 @@
                             <option value="<?php echo $row['id_mapel'] ?>"><?php echo $row['nama_mapel'] ?></option>
                           <?php endforeach?>
                           </select>
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">Semester</label>
-                          <input type="text" class="form-control" name="semester">
                   </div>
                   <div class="form-group">
                           <label class="bmd-label-floating">UH1</label>
