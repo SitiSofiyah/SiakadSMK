@@ -99,7 +99,7 @@ class Data_siswa extends CI_Controller {
 	{
 		$this->load->library('pdf');
 		$this->load->model('model_datasiswa');
-		$data["siswa1_list"] = $this->model_datasiswa->getTampilSiswa1();
+		$data["siswa_list"] = $this->model_datasiswa->getTampilSiswa1();
 		$this->pdf->load_view('admin/report_dtasiswa', $data);
 		
 	}

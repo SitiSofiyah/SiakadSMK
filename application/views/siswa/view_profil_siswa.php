@@ -113,107 +113,41 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">assignment_ind</i>
-                  </div>
-                  <p class="card-category">Guru</p>
-                  <h3 class="card-title"><?php foreach ($jml_guru as $guru) {  echo $guru; } ?>
-                  </h3>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-success">
+                  <p class="card-category">
+                 <h3>PROFIL ANDA </h3>
                 </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">date_range</i> Data Guru
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">account_box</i>
-                  </div>
-                  <p class="card-category">Siswa</p>
-                  <h3 class="card-title"><?php foreach ($jml_siswa as $siswa) {  echo $siswa; } ?></h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">date_range</i> Data Siswa
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">class</i>
-                  </div>
-                  <p class="card-category">Kelas</p>
-                  <h3 class="card-title"><?php foreach ($jml_kelas as $kelas) {  echo $kelas; } ?></h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">date_range</i> Data Kelas
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-tabs card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">descriptions</i>
-                  </div>
-                  <p class="card-category"> Jurusan</p>
-                  <h3 class="card-title"><?php foreach ($jml_jur as $jurusan) {  echo $jurusan; } ?></h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">date_range</i> Data Jurusan
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-primary card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">assignment</i>
-                  </div>
-                  <p class="card-category">Mapel</p>
-                  <h3 class="card-title"><?php foreach ($jml_mapel as $mapel) {  echo $mapel; } ?></h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">date_range</i> Data Mata Pelajaran
+                <div class="card-body">
+                  <div class="table-responsive">
+                <b>Nama Lengkap</b>
+                <p style="color: blue"><?php echo $siswa[0]->nama ?></p>
+                 <HR>
+                <b>NIS </b><br>
+                <p style="color: blue"><?php echo $siswa[0]->nis ?></p>
+                 <HR>
+                <b>Tempat, Tanggal Lahir </b>
+                <p style="color: blue"><?php echo $siswa[0]->tempat_lahir.", ".$siswa[0]->tgl_lahir ?></p>
+                 <HR>
+                <b>Agama </b>
+                 <p style="color: blue"><?php echo $siswa[0]->agama ?></p>
+                  <HR>
+                <b>Alamat </b>
+                 <p style="color: blue"><?php echo $siswa[0]->alamat ?></p>
+                  <HR>
+                <b>Jenis Kelamin</b>
+                 <p style="color: blue"><?php echo $siswa[0]->jenis_kelamin ?></p>
+                  <HR>           
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">speaker_notes</i>
-                  </div>
-                  <p class="card-category">Pengumuman</p>
-                  <h3 class="card-title"><?php foreach ($jml_peng as $pengumuman) {  echo $pengumuman; } ?></h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">date_range</i> Data Pengumuman
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          
+
+
+      
       <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
