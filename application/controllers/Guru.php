@@ -34,9 +34,11 @@ class Guru extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->model('guru_model');
 		$session_data=$this->session->userdata("guru");
-		$data['nip']=$session_data['nip'];
-		$this->load->view('guru/view_profil_guru',$data);
+		$nip=$session_data['nip'];
+		$object["guru"] = $this->guru_model->getGuru($nip);
+		$this->load->view('guru/view_profil_guru',$object);
 	}
 
 	public function siswa()

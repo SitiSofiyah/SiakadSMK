@@ -29,4 +29,12 @@ public function __construct()
 		$this->load->view('view_pengu', $data);
 	}
 
+	public function report()
+	{
+		$this->load->model('model_datasiswa');
+		$data["siswa_list"] = $this->model_datasiswa->getTampilSiswa();
+		$this->load->view('admin/report_dtasiswa', $data);
+	}
+	
+
 }

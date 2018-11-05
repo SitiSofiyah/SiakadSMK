@@ -123,8 +123,26 @@
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                
-                    
+                <h3>PROFIL ANDA </h3>
+                <HR>
+                <b>Nama Lengkap</b>
+                <p style="color: blue"><?php echo $guru[0]->nama ?></p>
+                <b>NIP </b><br>
+                <p style="color: blue"><?php echo $guru[0]->nip ?></p>
+                <b>Tempat, Tanggal Lahir </b>
+                <p style="color: blue"><?php echo $guru[0]->tempat_lahir.", ".$guru[0]->tgl_lahir ?></p>
+                <b>Agama </b>
+                 <p style="color: blue"><?php echo $guru[0]->agama ?></p>
+                <b>Alamat </b>
+                 <p style="color: blue"><?php echo $guru[0]->alamat ?></p>
+                <b>Jenis Kelamin</b>
+                 <p style="color: blue"><?php echo $guru[0]->jenis_kelamin ?></p>
+                <b>Status</b>
+                 <p style="color: blue"><?php echo $guru[0]->status ?></p>
+                <b>Golongan</b>
+                 <p style="color: blue"><?php echo $guru[0]->golongan ?></p>
+                <b>Jabatan</b>
+                 <p style="color: blue"><?php echo $guru[0]->jabatan ?></p>
                   
                   </div>
                 </div>

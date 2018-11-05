@@ -39,7 +39,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php $id=1; foreach ($siswa1_list as $key) : ?>
+                        <?php $id=1; foreach ($siswa_list as $key) : ?>
                         <tr>
                           <td class= "text-center"><?php echo $id ?></td>
                           <td class= "text-center"><?php echo $key['nis'] ?></td>
