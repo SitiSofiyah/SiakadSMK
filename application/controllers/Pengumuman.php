@@ -29,4 +29,5 @@ public function __construct()
 		$this->load->view('view_pengu', $data);
 	}
 
+
 }

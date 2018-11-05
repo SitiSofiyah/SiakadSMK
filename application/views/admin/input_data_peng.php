@@ -140,7 +140,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Tanggal</label>
-                          <input type="text" id="tgl_peng" name="tgl_peng" class="form-control">
+                          <input type="date" id="tgl_peng" name="tgl_peng" class="form-control">
                         </div>
                       </div>
                     </div>
