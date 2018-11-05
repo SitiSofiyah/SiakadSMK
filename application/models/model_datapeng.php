@@ -13,6 +13,12 @@ class model_datapeng extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function getNotifPengumuman()
+	{
+		$query = $this->db->query("SELECT * from pengumuman where tgl_pengumuman=CURDATE()");
+		return $query->result_array();
+	}
+
 	public function getID(){
 		$this->db->select("MAX(id_pengumuman)+1 as id");
 		$this->db->from("pengumuman");

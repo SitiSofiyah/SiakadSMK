@@ -37,4 +37,11 @@ class Siswa extends CI_Controller {
 	{
 		$this->load->view('siswa/view_profil_siswa');
 	}
+
+	public function notify()
+	{
+		$this->load->model('model_datapeng');
+		$object["pengumuman"] = $this->model_datapeng->getNotifPengumuman();
+		$this->load->view('siswa/view_notify',$object);
+	}
 }

@@ -53,7 +53,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
+            <a class="nav-link" href="<?php echo base_url('index.php/guru/notify') ?>">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>

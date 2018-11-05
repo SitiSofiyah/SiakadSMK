@@ -49,4 +49,11 @@ class Guru extends CI_Controller {
 		$object["siswa"] = $this->model_datasiswa->getDataSiswa($nip);
 		$this->load->view('guru/view_data_siswa',$object);
 	}
+
+	public function notify()
+	{
+		$this->load->model('model_datapeng');
+		$object["pengumuman"] = $this->model_datapeng->getNotifPengumuman();
+		$this->load->view('guru/view_notify',$object);
+	}
 }
