@@ -110,7 +110,43 @@
           </div>
         </div>
       </nav>
-      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-success">
+                  <p class="card-category">
+                 <h3>PROFIL ANDA </h3>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                <b>Nama Lengkap</b>
+                <p style="color: blue"><?php echo $siswa[0]->nama ?></p>
+                 <HR>
+                <b>NIS </b><br>
+                <p style="color: blue"><?php echo $siswa[0]->nis ?></p>
+                 <HR>
+                <b>Tempat, Tanggal Lahir </b>
+                <p style="color: blue"><?php echo $siswa[0]->tempat_lahir.", ".$siswa[0]->tgl_lahir ?></p>
+                 <HR>
+                <b>Agama </b>
+                 <p style="color: blue"><?php echo $siswa[0]->agama ?></p>
+                  <HR>
+                <b>Alamat </b>
+                 <p style="color: blue"><?php echo $siswa[0]->alamat ?></p>
+                  <HR>
+                <b>Jenis Kelamin</b>
+                 <p style="color: blue"><?php echo $siswa[0]->jenis_kelamin ?></p>
+                  <HR>           
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
       
       <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">

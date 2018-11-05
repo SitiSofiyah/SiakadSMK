@@ -35,7 +35,11 @@ class Siswa extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('siswa/view_profil_siswa');
+		$this->load->model('siswa_model');
+		$session_data=$this->session->userdata("siswa");
+		$nis=$session_data['nis'];
+		$object["siswa"] = $this->siswa_model->getSiswa($nis);
+		$this->load->view('siswa/view_profil_siswa', $object);
 	}
 
 	public function notify()
