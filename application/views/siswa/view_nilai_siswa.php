@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="https://cdn2.iconfinder.com/data/icons/seo-web-optomization-ultimate-set/512/custom_settings-512.png"></link>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Siswa
+   Siswa
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -21,7 +21,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="black" data-image="<?php echo base_url ('assets/images/sidebar-1.jpg') ?>">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="<?php echo base_url ('assets/images/sidebar-2.jpg') ?>">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -34,13 +34,13 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active">
+          <li class="nav-item   ">
             <a class="nav-link" href="<?php echo base_url('index.php/siswa') ?>">
               <i class="material-icons">account_box</i>
               <p>Profil Siswa</p>
             </a>
           </li>
-          <li class="nav-item  ">
+          <li class="nav-item active">
             <a class="nav-link" href="<?php echo base_url('index.php/nilai_siswa') ?>">
               <i class="material-icons">class</i>
               <p>Data Nilai</p>
@@ -104,44 +104,59 @@
           </div>
         </div>
       </nav>
+      <!-- End Navbar -->
+      
       <div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-success">
-                  <p class="card-category">
-                 <h3>PROFIL ANDA </h3>
+                  <h4 class="card-title ">Data Nilai</h4>
+                  <p class="card-category">SMK Paramita Mojokerto</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                <b>Nama Lengkap</b>
-                <p style="color: blue"><?php echo $siswa[0]->nama ?></p>
-                 <HR>
-                <b>NIS </b><br>
-                <p style="color: blue"><?php echo $siswa[0]->nis ?></p>
-                 <HR>
-                <b>Tempat, Tanggal Lahir </b>
-                <p style="color: blue"><?php echo $siswa[0]->tempat_lahir.", ".$siswa[0]->tgl_lahir ?></p>
-                 <HR>
-                <b>Agama </b>
-                 <p style="color: blue"><?php echo $siswa[0]->agama ?></p>
-                  <HR>
-                <b>Alamat </b>
-                 <p style="color: blue"><?php echo $siswa[0]->alamat ?></p>
-                  <HR>
-                <b>Jenis Kelamin</b>
-                 <p style="color: blue"><?php echo $siswa[0]->jenis_kelamin ?></p>
-                  <HR>           
+                    <table class="table">
+                      <thead class=" text-success">
+                        <th>NIS</th>
+                        <th>Mapel</th>
+                        <th>Semester</th>
+                        <th>Tahun Ajaran</th>
+                        <th>UH1</th>
+                        <th>UH2</th>
+                        <th>UH3</th>
+                        <th>UH4</th>
+                        <th>UTS</th>
+                        <th>UAS</th>
+                        <th>Rata-rata Nilai</th>
+                        
+                      </thead>
+                      <tbody>
+                        <?php foreach ($nilai as $row) { ?>
+                        <tr>
+                          <td><?php echo $row['nis'] ?></td>
+                          <td><?php echo $row['nama_mapel'] ?></td>
+                          <td><?php echo $row['semester'] ?></td>
+                          <td><?php echo $row['thn_ajaran'] ?></td>
+                          <td><?php echo $row['UH1'] ?></td>
+                          <td><?php echo $row['UH2'] ?></td>
+                          <td><?php echo $row['UH3'] ?></td>
+                          <td><?php echo $row['UH4'] ?></td>
+                          <td><?php echo $row['UTS'] ?></td>
+                          <td><?php echo $row['UAS'] ?></td>
+                           <td><?php echo $row['rata'] ?></td>
+                          
+                        </tr>
+                      <?php } ?>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
 
 
-
-
-      
       <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
