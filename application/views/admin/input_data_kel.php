@@ -134,39 +134,41 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <a href="<?php echo base_url('index.php/data_kelas/create') ?>" ><button type="button" class="btn btn-success"><i class="material-icons">add</i> Tambah Kelas</button></a>
               <div class="card">
                 <div class="card-header card-header-danger">
-                  <h4 class="card-title ">Data Kelas</h4>
-                  <p class="card-category"> SMK Paramita Mojokerto</p>
+                   <h4 class="card-title">Tambah Data Kelas</h4>
+                  <p class="card-category">Isi dibawah ini</p>
+                  <?php echo form_open_multipart('data_kelas/create'); ?>
+
+                 <?php echo validation_errors(); ?>
                 </div>
                 <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class=" text-primary">
-                        <th>No</th>
-                        <th>Kelas</th>
-                        <th>Jurusan</th>
-                        <th>Aksi</th>
-                      </thead>
-                      <tbody>
-                        <?php $id=1; foreach ($kel_list as $key) : ?>
-                        <tr>
-                          <td><?php echo $id ?></td>
-                          <td><?php echo $key['nama_kelas'] ?></td>
-                          <td><?php echo $key['nama_jurusan'] ?></td>
-                          <td>
-                            <a href="<?php echo base_url('index.php/data_kelas/update/' .$key['id_kelas']) ?>" class="btn btn-info">Edit</a>
-                            <a href="<?php echo base_url('index.php/data_kelas/delete/' .$key['id_kelas']) ?>" class="btn btn-danger">Hapus</a>
-                          </td>
-                        </tr>
-                        <?php $id++; endforeach?>
-                      </tbody>
-                    </table>
+                  <form>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nama Kelas</label>
+                          <input type="text" id="namaKelas" name="namaKelas" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                     <div class="form-group">
+                          <label class="bmd-label-floating">Jurusan</label>
+                          <select  class="form-control" name="jurusan">
+                          <?php foreach ($jurusan as $rew) : ?>
+                            <option value="<?php echo $rew['id_jurusan'] ?>"><?php echo $rew['nama_jurusan'] ?></option>
+                          <?php endforeach?>
+                          </select>
                   </div>
+                    <button type="submit" class="btn btn-info pull-right">Simpan</button>
+                    <a href="<?php echo base_url('index.php/data_kelas/') ?>" class="btn btn-danger">Kembali</a>
+                <?php echo form_close(); ?>
+                    <div class="clearfix"></div>
+                  </form>
                 </div>
               </div>
             </div>
+
           
       <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
