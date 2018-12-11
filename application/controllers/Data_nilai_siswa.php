@@ -21,7 +21,10 @@ class Data_nilai_siswa extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->model('model_datapeng');
+		$object["pengumuman"] = $this->model_datapeng->getJmlPengumuman();
 		$this->load->model('nilai_model');
+		$object["mapelKelas"] = $this->nilai_model->getMapelKelas();
 		$object["nilai"] = $this->nilai_model->getNilai_list();
 		$this->load->view('guru/view_data_nilai',$object);
 	}
@@ -29,7 +32,7 @@ class Data_nilai_siswa extends CI_Controller {
 	public function create()
 	{
 		$this->load->model('nilai_model');
-		$this->form_validation->set_rules('nis', 'Nis', 'trim|required');
+		$this->form_validation->set_rules('nis', 'nis', 'trim|required');
 		$this->form_validation->set_rules('mapel', 'mapel', 'trim|required');
 		$this->form_validation->set_rules('uh1', 'uh1', 'trim|required');
 		$this->form_validation->set_rules('uh2', 'uh2', 'trim|required');
@@ -37,10 +40,15 @@ class Data_nilai_siswa extends CI_Controller {
 		$this->form_validation->set_rules('uh4', 'uh4', 'trim|required');
 		$this->form_validation->set_rules('uts', 'uts', 'trim|required');
 		$this->form_validation->set_rules('uas', 'uas', 'trim|required');
+		$this->load->model('siswa_model');
 		$this->load->model('model_dataMapel');
+		$kelas = $this->input->post('mapel');
 		$session_data=$this->session->userdata("guru");
 		$data=$session_data['nip'];
+		$this->load->model('model_datapeng');
+		$object["pengumuman"] = $this->model_datapeng->getJmlPengumuman();
 		$object["mapel"] = $this->model_dataMapel->getMapelByGuru($data);
+		$object["nilai"] = $this->nilai_model->getNilai_list();
 		$id = $this->nilai_model->getID();
 		$idn = $this->nilai_model->getIDNilai();
 		if($id==null){
@@ -57,7 +65,7 @@ class Data_nilai_siswa extends CI_Controller {
 		{
 			
 			$this->nilai_model->insert($id,$idn);
-			echo "<script> alert('Data Nilai berhasil ditambahkan'); window.location.href='../Data_nilai_siswa';</script>";
+			redirect('Data_nilai_siswa/create');
 		}
 
 	}

@@ -16,7 +16,13 @@ class model_datapeng extends CI_Model{
 	public function getNotifPengumuman()
 	{
 		$query = $this->db->query("SELECT * from pengumuman where tgl_pengumuman=CURDATE()");
-		return $query->result_array();
+		return $query->result_array();	
+	}
+
+	public function getJmlPengumuman()
+	{
+		$query = $this->db->query("SELECT count(id_pengumuman) AS jml from pengumuman where tgl_pengumuman=CURDATE()");
+		return $query->result();	
 	}
 
 	public function getID(){

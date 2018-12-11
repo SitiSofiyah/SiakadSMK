@@ -55,7 +55,7 @@
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/guru/notify') ?>">
               <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+              <p>Notifications <span class="badge badge-danger"><?php echo $pengumuman[0]->jml?></p>
             </a>
           </li>
           <!-- <li class="nav-item active-pro ">
@@ -116,9 +116,22 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-               <a href="<?php echo base_url('index.php/data_nilai_siswa/create') ?>">
-                <button type="submit" class="btn btn-success"> <i class="material-icons">add_circle</i> Tambah Data Nilai</button>
-              </a>
+              <div class="col-md-4">
+             
+             <?php echo form_open_multipart('data_nilai_siswa/create'); ?>
+                <?php echo validation_errors(); ?> 
+              <div class="col-md-4">
+                        <div class="form-group">
+                          <select name="mapel" class="form-control">
+                          <?php foreach ($mapelKelas as $row) : ?>
+                            <option onchange="changeValue(this.value)"  value="<?php echo $row['id_kelas'] ?>"><?php echo $row['nama_kelas'] ?></option>
+                          <?php endforeach?>
+              </select>
+                        </div>
+              <button type="submit" class="btn btn-success"><i class="material-icons">add_circle</i> Tambah Data Nilai</button>
+               <?php echo form_close(); ?>
+            </div>
+            </div>
               <div class="card">
                 <div class="card-header card-header-success">
                   <h4 class="card-title ">Data Nilai</h4>
@@ -156,6 +169,11 @@
                 </div>
               </div>
             </div>
+            <script type="text/javascript">
+               function changeValue(nim){ 
+                </script><?php $a ?><script type="text/javascript"> = document.getElementById("mapel").value
+                };  
+            </script>
 
 
       <footer class="text-center">

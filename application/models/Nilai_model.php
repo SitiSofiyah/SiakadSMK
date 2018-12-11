@@ -8,6 +8,8 @@ class Nilai_model extends CI_Model {
 		parent::__construct();
 		
 	}
+
+
 	
 	public function getJenisNilai_list(){
 		$query = $this->db->query("select * from jenis_nilai");
@@ -80,6 +82,17 @@ class Nilai_model extends CI_Model {
 	public function delete($id){
 		$this->db->where('id_nilai', $id);
 		$this->db->delete('nilai');
+	}
+
+	public function getMapelKelas(){
+		$query = $this->db->query("select * from guru inner join detail_pengajar on guru.nip=detail_pengajar.nip inner join mapel on detail_pengajar.fk_mapel = mapel.id_mapel inner join kelas on detail_pengajar.fk_kelas=kelas.id_kelas");
+		return $query->result_array();
+	}
+
+	public function getMapelKelas2(){
+		$a = $this->input->post('mapel');
+		$query = $this->db->query("select * from guru inner join detail_pengajar on guru.nip=detail_pengajar.nip inner join mapel on detail_pengajar.fk_mapel = mapel.id_mapel inner join kelas on detail_pengajar.fk_kelas=kelas.id_kelas");
+		return $query->result_array();
 	}
 
 
