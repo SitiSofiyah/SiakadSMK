@@ -34,22 +34,16 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item active">
             <a class="nav-link" href="<?php echo base_url('index.php/siswa') ?>">
               <i class="material-icons">account_box</i>
               <p>Profil Siswa</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_nilai_siswa') ?>">
+          <li class="nav-item  ">
+            <a class="nav-link" href="<?php echo base_url('index.php/nilai_siswa') ?>">
               <i class="material-icons">class</i>
               <p>Data Nilai</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_siswa') ?>">
-              <i class="material-icons">account_box</i>
-              <p>Data Siswa</p>
             </a>
           </li>
           <li class="nav-item ">

@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="https://cdn2.iconfinder.com/data/icons/seo-web-optomization-ultimate-set/512/custom_settings-512.png"></link>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Admin Siakad
+   Siswa
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -21,7 +21,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="danger" data-background-color="white" data-image="<?php echo base_url ('assets/images/sidebar-1.jpg') ?>">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="<?php echo base_url ('assets/images/sidebar-2.jpg') ?>">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -29,54 +29,29 @@
     -->
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Administrator
+          Siswa
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/dashboard') ?>">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_guru') ?>">
-              <i class="material-icons">assignment_ind</i>
-              <p>Data Guru</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_siswa') ?>">
+          <li class="nav-item   ">
+            <a class="nav-link" href="<?php echo base_url('index.php/siswa') ?>">
               <i class="material-icons">account_box</i>
-              <p>Data Siswa</p>
+              <p>Profil Siswa</p>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_kelas') ?>">
+            <a class="nav-link" href="<?php echo base_url('index.php/nilai_siswa') ?>">
               <i class="material-icons">class</i>
-              <p>Data Kelas</p>
+              <p>Data Nilai</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_jurusan') ?>">
-              <i class="material-icons">description</i>
-              <p>Data Jurusan</p>
+            <a class="nav-link" href="<?php echo base_url('index.php/siswa/notify') ?>">
+              <i class="material-icons">notifications</i>
+              <p>Notifications</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_mapel') ?>">
-              <i class="material-icons">assignment</i>
-              <p>Data Mapel</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo base_url('index.php/data_pengumuman') ?>">
-              <i class="material-icons">speaker_notes</i>
-              <p>Data Pengumuman</p>
-            </a>
-          </li>
-          
           <!-- <li class="nav-item active-pro ">
                 <a class="nav-link" href="./upgrade.html">
                     <i class="material-icons">unarchive</i>
@@ -91,7 +66,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Data Kelas</a>
+            <a class="navbar-brand" href="#pablo">Profil Siswa</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -122,7 +97,7 @@
                   <p class="d-lg-none d-md-block">
                     Account
                   </p>
-                  <li><a href="<?php echo base_url('index.php/Auth_admin/logout') ?>">Logout</a></li>
+                  <li><a href="<?php echo base_url('index.php/Auth/logout') ?>">Logout</a></li>
                 </a>
               </li>
             </ul>
@@ -130,44 +105,58 @@
         </div>
       </nav>
       <!-- End Navbar -->
+      
       <div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <a href="<?php echo base_url('index.php/data_kelas/create') ?>" ><button type="button" class="btn btn-success"><i class="material-icons">add</i> Tambah Kelas</button></a>
               <div class="card">
-                <div class="card-header card-header-danger">
-                  <h4 class="card-title ">Data Kelas</h4>
-                  <p class="card-category"> SMK Paramita Mojokerto</p>
+                <div class="card-header card-header-success">
+                  <h4 class="card-title ">Data Nilai</h4>
+                  <p class="card-category">SMK Paramita Mojokerto</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
-                      <thead class=" text-primary">
-                        <th>No</th>
-                        <th>Kelas</th>
-                        <th>Jurusan</th>
-                        <th>Aksi</th>
+                      <thead class=" text-success">
+                        <th>NIS</th>
+                        <th>Mapel</th>
+                        <th>Semester</th>
+                        <th>Tahun Ajaran</th>
+                        <th>UH1</th>
+                        <th>UH2</th>
+                        <th>UH3</th>
+                        <th>UH4</th>
+                        <th>UTS</th>
+                        <th>UAS</th>
+                        <th>Rata-rata Nilai</th>
+                        
                       </thead>
                       <tbody>
-                        <?php $id=1; foreach ($kel_list as $key) : ?>
+                        <?php foreach ($nilai as $row) { ?>
                         <tr>
-                          <td><?php echo $id ?></td>
-                          <td><?php echo $key['nama_kelas'] ?></td>
-                          <td><?php echo $key['nama_jurusan'] ?></td>
-                          <td>
-                            <a href="<?php echo base_url('index.php/data_kelas/update/' .$key['id_kelas']) ?>" class="btn btn-info">Edit</a>
-                            <a href="<?php echo base_url('index.php/data_kelas/delete/' .$key['id_kelas']) ?>" class="btn btn-danger">Hapus</a>
-                          </td>
+                          <td><?php echo $row['nis'] ?></td>
+                          <td><?php echo $row['nama_mapel'] ?></td>
+                          <td><?php echo $row['semester'] ?></td>
+                          <td><?php echo $row['thn_ajaran'] ?></td>
+                          <td><?php echo $row['UH1'] ?></td>
+                          <td><?php echo $row['UH2'] ?></td>
+                          <td><?php echo $row['UH3'] ?></td>
+                          <td><?php echo $row['UH4'] ?></td>
+                          <td><?php echo $row['UTS'] ?></td>
+                          <td><?php echo $row['UAS'] ?></td>
+                           <td><?php echo $row['rata'] ?></td>
+                          
                         </tr>
-                        <?php $id++; endforeach?>
+                      <?php } ?>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
             </div>
-          
+
+
       <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>

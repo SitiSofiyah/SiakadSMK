@@ -13,6 +13,12 @@ class model_kelas extends CI_Model{
 		return $query->result_array();
 	}
 
+	public function getTampilJurusan()
+	{
+		$query = $this->db->query("SELECT * from jurusan");
+		return $query->result_array();
+	}
+
 	
 
 }
