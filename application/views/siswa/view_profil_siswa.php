@@ -49,7 +49,7 @@
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/siswa/notify') ?>">
               <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+              <p>Notifications <span  class="badge badge-danger"><?php echo $pengumuman[0]->jml?></p>
             </a>
           </li>
           <!-- <li class="nav-item active-pro ">

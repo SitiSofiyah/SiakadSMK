@@ -34,6 +34,8 @@ class Guru extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->model('model_datapeng');
+		$object["pengumuman"] = $this->model_datapeng->getJmlPengumuman();
 		$this->load->model('guru_model');
 		$session_data=$this->session->userdata("guru");
 		$nip=$session_data['nip'];
@@ -43,6 +45,8 @@ class Guru extends CI_Controller {
 
 	public function siswa()
 	{
+		$this->load->model('model_datapeng');
+		$object["pengumuman"] = $this->model_datapeng->getJmlPengumuman();
 		$this->load->model('model_datasiswa');
 		$session_data=$this->session->userdata("guru");
 		$nip=$session_data['nip'];
@@ -53,7 +57,8 @@ class Guru extends CI_Controller {
 	public function notify()
 	{
 		$this->load->model('model_datapeng');
-		$object["pengumuman"] = $this->model_datapeng->getNotifPengumuman();
+		$object["pengumuman"] = $this->model_datapeng->getJmlPengumuman();
+		$object["pengumumann"] = $this->model_datapeng->getNotifPengumuman();
 		$this->load->view('guru/view_notify',$object);
 	}
 }

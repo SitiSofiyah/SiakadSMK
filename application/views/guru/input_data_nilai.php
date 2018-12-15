@@ -55,7 +55,7 @@
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/guru/notify') ?>">
               <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+              <p>Notifications <span class="badge badge-danger"><?php echo $pengumuman[0]->jml?></p>
             </a>
           </li>
           <!-- <li class="nav-item active-pro ">
@@ -123,47 +123,79 @@
                 
                 <?php echo form_open_multipart('data_nilai_siswa/create'); ?>
                 <?php echo validation_errors(); ?>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">NIS</label>
+                  <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <!-- <select name="nis" class="form-control" >
+                          <?php foreach ($data as $row) : ?>
+                            <option value="<?php echo $row['nis'] ?>"><?php echo $row['nama'] ?></option>
+                          <?php endforeach?>
+                          </select> -->
+                           <label class="bmd-label-floating">NIS</label>
                           <input type="text" class="form-control" name="nis">
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">Mapel</label>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
                           <select name="mapel" class="form-control" name="mapel">
                           <?php foreach ($mapel as $row) : ?>
                             <option value="<?php echo $row['id_mapel'] ?>"><?php echo $row['nama_mapel'] ?></option>
                           <?php endforeach?>
                           </select>
-                  </div>
-                  <div class="form-group">
+                        </div>
+                      </div>
+
+                      <div class="row">
+                      <div class="col-md-2">
+                        <div class="form-group">
                           <label class="bmd-label-floating">UH1</label>
                           <input type="text" class="form-control" name="uh1">
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">UH2</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                           <label class="bmd-label-floating">UH2</label>
                           <input type="text" class="form-control" name="uh2">
-                  </div>
-                  <div class="form-group">
-                          <label>UH3</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">UH3</label>
                           <input type="text" class="form-control" name="uh3">
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">UH4</label>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                           <label class="bmd-label-floating">UH4</label>
                           <input type="text" class="form-control" name="uh4">
-                  </div>
-                  <div class="form-group">
-                          <label class="bmd-label-floating">UTS</label>
+                        </div>
+                      </div>
+                    </div>
+                      
+                  
+                  
+                
+                  <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                           <label class="bmd-label-floating">UTS</label>
                           <input type="text" class="form-control" name="uts">
-                  </div>
-                  <div class="form-group">
-                          <label>UAS</label>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">UAS</label>
                           <input type="text" class="form-control" name="uas">
-                  </div>
-                  <div class="form-group">
-                          <label>Tahun Ajaran</label>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Tahun Ajaran</label>
                           <input type="text" class="form-control" name="thn_ajaran">
-                  </div>
-                   
+                        </div>
+                      </div>
+                    </div>
+                 
                   
                 </div>
 
@@ -171,8 +203,41 @@
 
                 <?php echo form_close(); ?>
                   
+
+                  <table class="table" border="1">
+                      <thead class=" text-success">
+                        <th>NIS</th>
+                        <th>UH1</th>
+                        <th>UH2</th>
+                        <th>UH3</th>
+                        <th>UH4</th>
+                        <th>UTS</th>
+                        <th>UAS</th>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($nilai as $row) { ?>
+                        <tr>
+                          <td><?php echo $row['nis'] ?></td>
+                          <td><?php echo $row['UH1'] ?></td>
+                          <td><?php echo $row['UH2'] ?></td>
+                          <td><?php echo $row['UH3'] ?></td>
+                          <td><?php echo $row['UH4'] ?></td>
+                           <td><?php echo $row['UTS'] ?></td>
+                          <td><?php echo $row['UAS'] ?></td>
+                        </tr>
+                      <?php } ?>
+                      </tbody>
+                    </table>
                 </div>
               </div>
+
+
+              <div class="table-responsive">
+                
+
+                 
+                    
+                  </div>
 
 
             </div>

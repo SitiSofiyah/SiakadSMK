@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href= "<?php echo base_url ('assets/images/apple-icon.png') ?>">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <link rel="icon" type="image/png" href="https://cdn2.iconfinder.com/data/icons/seo-web-optomization-ultimate-set/512/custom_settings-512.png"></link>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
@@ -13,12 +14,20 @@
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- CSS Files -->
   <link href= "<?php echo base_url ('assets/css/material-dashboard.css?v=2.1.0') ?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?php echo base_url ('assets/demo/demo.css') ?>" rel="stylesheet" />
- 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/DataTables/css/dataTables.bootstrap.min.css" />
+
+
+   <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery-2.1.4.min.js"></script>
+   <script type="text/javascript" src="<?php echo base_url()?>assets/css/bootstrap.min.js"></script>
+   <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery.dataTables.min.js"></script>
+   <script type="text/javascript" src="<?php echo base_url()?>assets/DataTables/js/dataTables.bootstrap.min.js"></script>
+   
 </head>
 
 <body class="">
@@ -148,7 +157,7 @@
                 </div>
                 <div class="card-body">
                   <div>
-                    <table id="example" class="table table-stripped table-bordered">
+                    <table id="example"  class="table table-bordered">
                       <thead class=" text-primary">
                         <th>NIP</th>
                         <th>Nama</th>
@@ -184,10 +193,12 @@
                   </div>
                 </div>
               </div>
- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+ 
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" src="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"></script>
 <script type="text/javascript">
   $(document).ready(function() {
     $('#example').DataTable();
@@ -198,8 +209,7 @@
 
           
       <footer class="text-center">
-  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-    <span class="glyphicon glyphicon-chevron-up"></span>
+ 
   </a><br><br>
   <p>www.smkparamitamojokerto.com</a></p> 
 </footer>
@@ -207,6 +217,7 @@
   </div>
   <!--   Core JS Files   -->
   <script src="<?php echo base_url ('assets/js/core/jquery.min.js') ?>" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script src="<?php echo base_url ('assets/js/core/popper.min.js') ?>" type="text/javascript"></script>
   <script src="<?php echo base_url ('assets/js/core/bootstrap-material-design.min.js') ?>" type="text/javascript"></script>
   <script src="<?php echo base_url ('assets/js/plugins/perfect-scrollbar.jquery.min.js') ?>"></script>
@@ -220,13 +231,7 @@
   <script src="<?php echo base_url ('assets/js/material-dashboard.min.js?v=2.1.0') ?>" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src= "<?php echo base_url ('assets/demo/demo.js') ?>"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      md.initDashboardPageCharts();
-
-    });
-  </script>
+ 
 </body>
 
 </html>

@@ -55,7 +55,7 @@
           <li class="nav-item active">
             <a class="nav-link" href="<?php echo base_url('index.php/guru/notify') ?>">
               <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+              <p>Notifications <span class="badge badge-danger"><?php echo $pengumuman[0]->jml?></p>
             </a>
           </li>
           <!-- <li class="nav-item active-pro ">
@@ -124,7 +124,7 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table border="0">
-                      <?php foreach ($pengumuman as $row) { ?>
+                      <?php foreach ($pengumumann as $row) { ?>
                       <tr>
                         <td>
                             <h4><b> <?php echo $row['judul'] ?> </b></h4>

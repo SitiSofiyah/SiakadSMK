@@ -38,6 +38,8 @@ class Siswa extends CI_Controller {
 		$this->load->model('siswa_model');
 		$session_data=$this->session->userdata("siswa");
 		$nis=$session_data['nis'];
+		$this->load->model('model_datapeng');
+		$object["pengumuman"] = $this->model_datapeng->getJmlPengumuman();
 		$object["siswa"] = $this->siswa_model->getSiswa($nis);
 		$this->load->view('siswa/view_profil_siswa', $object);
 	}
@@ -45,7 +47,8 @@ class Siswa extends CI_Controller {
 	public function notify()
 	{
 		$this->load->model('model_datapeng');
-		$object["pengumuman"] = $this->model_datapeng->getNotifPengumuman();
+		$object["pengumuman"] = $this->model_datapeng->getJmlPengumuman();
+		$object["pengumumann"] = $this->model_datapeng->getNotifPengumuman();
 		$this->load->view('siswa/view_notify',$object);
 	}
 }
