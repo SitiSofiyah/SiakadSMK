@@ -14,6 +14,12 @@ class Model_datakel extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function getTampilDetail($id_kelas)
+	{
+		$query = $this->db->query("SELECT * FROM anggota_kelas inner join siswa on anggota_kelas.nis = siswa.nis inner join transaksi_kelas t on anggota_kelas.fk_transKelas= t.id_transKelas where fk_kelas = '$id_kelas'");
+		return $query->result_array();
+	}
+
 	public function insertKel(){
 		$data = array (
 			'nama_kelas'=>$this->input->post('namaKelas'),
