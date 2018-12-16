@@ -17,11 +17,13 @@
   <link href= "<?php echo base_url ('assets/css/material-dashboard.css?v=2.1.0') ?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?php echo base_url ('assets/demo/demo.css') ?>" rel="stylesheet" />
+ 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="<?php echo base_url ('assets/images/sidebar-1.jpg') ?>">
+    <div class="sidebar" data-color="orange" data-background-color="white" data-image="<?php echo base_url ('assets/images/sidebar-1.jpg') ?>">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -40,7 +42,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="<?php echo base_url('index.php/data_guru') ?>">
               <i class="material-icons">assignment_ind</i>
               <p>Data Guru</p>
@@ -64,7 +66,7 @@
               <p>Data Jurusan</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/data_mapel') ?>">
               <i class="material-icons">assignment</i>
               <p>Data Mapel</p>
@@ -90,9 +92,7 @@
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Data Guru</a>
-          </div>
+          
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -130,52 +130,58 @@
         </div>
       </nav>
       <!-- End Navbar -->
+
       <div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
+              <a href="<?php echo base_url('index.php/data_mapel/create') ?>">
+                <button type="submit" class="btn btn-primary"> <i class="material-icons">add_circle</i> Tambah Data Mapel</button>
+              </a> 
+              <!-- <a href="<?php echo base_url('index.php/detail_mapel') ?>">
+                <button type="submit" class="btn btn-success">  Data mapel</button>
+              </a> -->
               <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Simple Table</h4>
-                  <p class="card-category"> Here is a subtitle for this table</p>
+                <div class="card-header card-header-warning">
+                  <h4 class="card-title ">Data Mapel</h4>
+                  <p class="card-category"> Ini adalah data Mapel SMK Paramita Mojokerto</p>
                 </div>
                 <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
+                  <div>
+                    <table id="example" class="table table-stripped table-bordered">
                       <thead class=" text-primary">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th>Salary</th>
+                     
+                        <th>Nama Mapel</th>
+                        <th>Semester</th>
+                        <th>Kategori</th>
                       </thead>
                       <tbody>
+                       <?php foreach ($id as $row) { ?>
                         <tr>
-                          <td>1</td>
-                          <td>Dakota Rice</td>
-                          <td>Niger</td>
-                          <td>Oud-Turnhou</td>
-                          <td class="text-primary">$36,738</td>
+                          <td><?php echo $row['nama_mapel'] ?></td>
+                          <td><?php echo $row['semester'] ?></td>
+                          <td><?php echo $row['kategori'] ?></td>
+                          <td>
+                            <a class="btn btn-success"  href="<?php echo base_url('index.php/data_Mapel/update/'.$row['id_mapel']) ?>">  <i class="material-icons">create</i> </a>
+                            <a class="btn btn-danger" href="<?php echo base_url('index.php/data_Mapel/delete/'.$row['id_mapel']) ?>"> <i class="material-icons">delete</i> </a>
+                          </td>
                         </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>Dakota Rice</td>
-                          <td>Niger</td>
-                          <td>Oud-Turnhou</td>
-                          <td class="text-primary">$36,738</td>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>Dakota Rice</td>
-                          <td>Niger</td>
-                          <td>Oud-Turnhou</td>
-                          <td class="text-primary">$36,738</td>
-                        </tr>
+                      <?php } ?>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
             </div>
 
           

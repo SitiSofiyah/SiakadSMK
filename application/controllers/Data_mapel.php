@@ -35,6 +35,64 @@ class Data_mapel extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admin/view_data_mapel');
+		$this->load->model('Model_dataMapel');
+		$data['id'] = $this->Model_dataMapel->getTampilMapel();
+		$this->load->view('admin/view_data_mapel',$data);
+
 	}
+	public function create()
+	{
+		$this->load->model('Model_dataMapel');
+		$this->form_validation->set_rules('nama_mapel', 'Nama Mapel', 'trim|required');
+		$this->form_validation->set_rules('semester', 'Semester', 'trim|required');
+		$this->form_validation->set_rules('kategori', 'Kategori', 'trim|required');
+		
+		if ($this->form_validation->run() == FALSE)
+			{ $this->load->view('admin/input_data_mapel'); 
+	}
+		else
+		{
+			$this->Model_dataMapel->insertMapel();
+			echo "<script> alert('Data Mapel berhasil ditambahkan'); window.location.href='../Data_mapel';</script>";
+		}
+
+	}
+
+	public function update($id)
+	{
+		$this->load->model('Model_dataMapel');
+		$this->form_validation->set_rules('nama_mapel', 'Nama Mapel', 'trim|required');
+		$this->form_validation->set_rules('semester', 'Semester', 'trim|required');
+		$this->form_validation->set_rules('kategori', 'Kategori', 'trim|required');
+		
+		
+		
+		$data['data_mapel']=$this->Model_dataMapel->getMapel($id);
+
+		if ($this->form_validation->run() == FALSE){
+			$this->load->view('admin/edit_data_mapel', $data);
+		}else{
+			$this->Model_dataMapel->updateById($id);
+			echo "<script> alert('Data Mapel berhasil diedit'); window.location.href='../../Data_mapel';</script>";
+
+		}
+	}
+
+	public function delete($id)
+	{
+		$this->load->model('Model_dataMapel');
+		$this->Model_dataMapel->delete($id);
+		redirect('data_mapel');
+	}
+
+	// public function createPdf()
+	// {
+	// 	$this->load->library('pdf');
+	// 	$this->load->model('Model_Mapel');
+	// 	$data["mapel_list"] = $this->Model_Mapel->getTampilMapel1();
+	// 	$this->pdf->load_view('admin/report_datamapel', $data);
+		
+	// }
+
+
 }

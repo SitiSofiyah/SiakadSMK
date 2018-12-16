@@ -49,7 +49,7 @@
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/siswa/notify') ?>">
               <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+              <p>Notifications <span class="badge badge-danger"><?php echo $pengumuman[0]->jml?></p>
             </a>
           </li>
           <!-- <li class="nav-item active-pro ">
@@ -110,6 +110,9 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
+              <a href="<?php echo base_url('index.php/nilai_siswa/print/'.$nis) ?>">
+                <button type="submit" class="btn btn-primary"> <i class="material-icons">add_circle</i> Print Rekap Nilai</button>
+              </a> 
               <div class="card">
                 <div class="card-header card-header-success">
                   <h4 class="card-title ">Data Nilai</h4>

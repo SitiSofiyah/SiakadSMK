@@ -140,7 +140,7 @@
                     <i class="material-icons">assignment_ind</i>
                   </div>
                   <p class="card-category">Guru</p>
-                  <h3 class="card-title"><?php foreach ($jml_guru as $guru) {  echo $guru; } ?>
+                  <h3 class="card-title"><?php  foreach ($jml_guru as $guru) {  echo $guru; } ?>
                   </h3>
                 </div>
                 <div class="card-footer">
