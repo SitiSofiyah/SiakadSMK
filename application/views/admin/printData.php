@@ -21,7 +21,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="danger" data-background-color="white" data-image="<?php echo base_url ('assets/images/sidebar-1.jpg') ?>">
+    <div class="sidebar" data-color="green" data-background-color="white" data-image="<?php echo base_url ('assets/images/sidebar-1.jpg') ?>">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -46,13 +46,13 @@
               <p>Data Guru</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="<?php echo base_url('index.php/data_siswa') ?>">
               <i class="material-icons">account_box</i>
               <p>Data Siswa</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url('index.php/data_kelas') ?>">
               <i class="material-icons">class</i>
               <p>Data Kelas</p>
@@ -91,7 +91,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Data Kelas</a>
+            <a class="navbar-brand" href="#pablo">Data Siswa</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -134,10 +134,9 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <a href="<?php echo base_url('index.php/data_kelas/create') ?>" ><button type="button" class="btn btn-success"><i class="material-icons">add</i> Tambah Kelas</button></a>
               <div class="card">
-                <div class="card-header card-header-danger">
-                  <h4 class="card-title ">Data Kelas</h4>
+                <div class="card-header card-header-success">
+                  <h4 class="card-title ">Print Data</h4>
                   <p class="card-category"> SMK Paramita Mojokerto</p>
                 </div>
                 <div class="card-body">
@@ -145,20 +144,29 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>No</th>
-                        <th>Kelas</th>
-                        <th>Jurusan</th>
+                        <th>Nis</th>
+                        <th>Nama</th>
+                        <th>Tempat Lahir</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Alamat</th>
+                        <th>Agama</th>
                         <th>Aksi</th>
                       </thead>
                       <tbody>
-                        <?php $id=1; foreach ($kel_list as $key) : ?>
+                        <?php $id=1; foreach ($siswa_list as $key) : ?>
                         <tr>
                           <td><?php echo $id ?></td>
-                          <td><?php echo $key['nama_kelas'] ?></td>
-                          <td><?php echo $key['nama_jurusan'] ?></td>
+                          <td><?php echo $key['nis'] ?></td>
+                          <td><?php echo $key['nama'] ?></td>
+                          <td><?php echo $key['tempat_lahir'] ?></td>
+                          <td><?php echo $key['tgl_lahir'] ?></td>
+                          <td><?php echo $key['jenis_kelamin'] ?></td>
+                          <td><?php echo $key['alamat'] ?></td>
+                          <td><?php echo $key['agama'] ?></td>
                           <td>
-                            <a href="<?php echo base_url('index.php/data_kelas/update/' .$key['id_kelas']) ?>" class="btn btn-info">Edit</a>
-                            <a href="<?php echo base_url('index.php/data_kelas/delete/' .$key['id_kelas']) ?>" class="btn btn-danger">Hapus</a>
-                            <a href="<?php echo base_url('index.php/data_kelas/anggotaKelas/' .$key['id_kelas']) ?>" class="btn btn-warning">Detail</a>
+                            <a href="<?php echo base_url('index.php/data_siswa/update/' .$key['nis']) ?>" class="btn btn-info">Edit</a>
+                            <a href="<?php echo base_url('index.php/data_siswa/delete/' .$key['nis']) ?>" class="btn btn-danger">Hapus</a>
                           </td>
                         </tr>
                         <?php $id++; endforeach?>
@@ -168,6 +176,7 @@
                 </div>
               </div>
             </div>
+
           
       <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">

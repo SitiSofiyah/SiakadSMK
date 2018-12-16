@@ -40,6 +40,14 @@ class Data_kelas extends CI_Controller {
 		$this->load->view('admin/view_data_kelas', $data);
 	}
 
+	public function anggotaKelas($id_kelas)
+	{
+		$this->load->model('model_datakel');
+		$data['id_kelas'] = $id_kelas;
+		$data['detail_list'] = $this->model_datakel->getTampilDetail($id_kelas);
+		$this->load->view('admin/view_anggota_kelas',$data);
+	}
+
 	public function create()
 	{
 		$this->load->model('model_datakel');

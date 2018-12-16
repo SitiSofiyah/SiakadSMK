@@ -134,7 +134,6 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <a href="<?php echo base_url('index.php/data_kelas/create') ?>" ><button type="button" class="btn btn-success"><i class="material-icons">add</i> Tambah Kelas</button></a>
               <div class="card">
                 <div class="card-header card-header-danger">
                   <h4 class="card-title ">Data Kelas</h4>
@@ -145,25 +144,20 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>No</th>
-                        <th>Kelas</th>
-                        <th>Jurusan</th>
-                        <th>Aksi</th>
+                        <th>Nis</th>
+                        <th>Nama</th>
                       </thead>
                       <tbody>
-                        <?php $id=1; foreach ($kel_list as $key) : ?>
+                        <?php $id=1; foreach ($detail_list as $key) : ?>
                         <tr>
                           <td><?php echo $id ?></td>
-                          <td><?php echo $key['nama_kelas'] ?></td>
-                          <td><?php echo $key['nama_jurusan'] ?></td>
-                          <td>
-                            <a href="<?php echo base_url('index.php/data_kelas/update/' .$key['id_kelas']) ?>" class="btn btn-info">Edit</a>
-                            <a href="<?php echo base_url('index.php/data_kelas/delete/' .$key['id_kelas']) ?>" class="btn btn-danger">Hapus</a>
-                            <a href="<?php echo base_url('index.php/data_kelas/anggotaKelas/' .$key['id_kelas']) ?>" class="btn btn-warning">Detail</a>
-                          </td>
+                          <td><?php echo $key['nis'] ?></td>
+                          <td><?php echo $key['nama'] ?></td>
                         </tr>
                         <?php $id++; endforeach?>
                       </tbody>
                     </table>
+                   <a href="<?php echo base_url('index.php/data_kelas/') ?>" class="btn btn-danger">Kembali</a>
                   </div>
                 </div>
               </div>

@@ -15,9 +15,4 @@ class nilai_siswa_model extends CI_Model {
 		return $query->result_array();
 	}
 
-
-	public function detail($id){
-		$query = $this->db->query("select * from siswa inner join nilai on nilai.fk_nis=siswa.nis inner join jenis_nilai on nilai.fk_jenisNilai = jenis_nilai.id_jenisNilai inner join mapel on nilai.fk_mapel=mapel.id_mapel where id_nilai=$id");
-		return $query->result_array();
-	}
 }
