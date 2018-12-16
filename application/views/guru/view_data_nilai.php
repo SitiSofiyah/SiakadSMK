@@ -121,12 +121,7 @@
              <?php echo form_open_multipart('data_nilai_siswa/create'); ?>
                 <?php echo validation_errors(); ?> 
               <div class="col-md-4">
-                        <div class="form-group">
-                          <select name="mapel" class="form-control">
-                          <?php foreach ($mapelKelas as $row) : ?>
-                            <option onchange="changeValue(this.value)"  value="<?php echo $row['id_kelas'] ?>"><?php echo $row['nama_kelas'] ?></option>
-                          <?php endforeach?>
-              </select>
+                        
                         </div>
               <button type="submit" class="btn btn-success"><i class="material-icons">add_circle</i> Tambah Data Nilai</button>
                <?php echo form_close(); ?>

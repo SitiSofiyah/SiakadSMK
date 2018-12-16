@@ -49,7 +49,4 @@ class model_dataMapel extends CI_Model{
 		$this->db->where('id_mapel', $id);
 		$this->db->delete('mapel');
 	}
-
-	
-
 }
