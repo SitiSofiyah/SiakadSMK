@@ -134,6 +134,9 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
+              <a href="<?php echo base_url('index.php/data_guru/create') ?>">
+                <button type="submit" class="btn btn-primary"> <i class="material-icons">add_circle</i> Tambah anggota kelas</button>
+              </a> 
               <div class="card">
                 <div class="card-header card-header-danger">
                   <h4 class="card-title ">Data Kelas</h4>
